@@ -1,0 +1,23 @@
+---
+layout: default
+title: Blog
+---
+
+  <h1 class="page-header">Posts</h1>
+
+  <ul class="well">
+    {% for post in site.posts %}
+
+        <h2>
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+
+        <span class="text-warning">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <p>{{ post.content | strip_html | truncatewords:75}}</p>
+        <a href="{{ post.url | prepend: site.baseurl }}">Read more...</a><br>
+        
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+

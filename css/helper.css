@@ -1,0 +1,21 @@
+/**
+ * Icons
+ */
+.icon > svg {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle; }
+  .icon > svg path {
+    fill: #828282; }
+
+ .social-media-list {
+  text-align: center;
+  list-style: none;
+  margin-left: 0; }
+
+ .social-media-list li {
+    display: inline;
+    padding:10px;
+    font-size:16px;
+}
