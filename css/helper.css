@@ -23,4 +23,5 @@
 body {
     -moz-transform: scale(1.1); /* for Firefox, default 1*/
     zoom:110%; /* For Chrome, IE, default 100%*/
+    padding-top: 50px;
 }
