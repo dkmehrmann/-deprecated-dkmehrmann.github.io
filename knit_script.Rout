@@ -1,0 +1,113 @@
+
+R version 3.2.3 (2015-12-10) -- "Wooden Christmas-Tree"
+Copyright (C) 2015 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> #!/usr/bin/Rscript --vanilla
+> 
+> setwd(".")
+> 
+> # compiles all .Rmd files in _R directory into .md files in Pages directory,
+> # if the input file is older than the output file.
+> 
+> # run ./knitpages.R to update all knitr files that need to be updated.
+> 
+> KnitPost <- function(input, outfile, figsfolder, cachefolder, base.url="/") {
++   # this function is a modified version of an example here:
++   # http://jfisher-usgs.github.com/r/2012/07/03/knitr-jekyll/
++   require(knitr);
++   opts_knit$set(base.url = base.url)
++   fig.path <- paste0(figsfolder, sub(".Rmd$", "", basename(input)), "/")
++   cache.path <- file.path(cachefolder, sub(".Rmd$", "", basename(input)), "/")
++   
++   opts_chunk$set(fig.path = fig.path)
++   opts_chunk$set(cache.path = cache.path)
++   opts_chunk$set(fig.cap = "center")
++   render_jekyll()
++   knit(input, outfile, envir = parent.frame())
++ }
+> 
+> knit_folder <- function(infolder, outfolder, figsfolder, cachefolder) {
++   for (infile in list.files(infolder, pattern = "*.Rmd", full.names = TRUE)) {
++     pattern = "\\d\\d\\d\\d\\-\\d\\d\\-\\d\\d\\-"
++     print(infile)
++     # folder = ifelse(grepl(pattern, infile), outfolder, "pages")
++     outfile = paste0(outfolder, "/", sub(".Rmd$", ".md", basename(infile)))
++     print(outfile)
++     
++     # knit only if the input file is the last one modified
++     if (!file.exists(outfile) |
++         file.info(infile)$mtime > file.info(outfile)$mtime) {
++       KnitPost(infile, outfile, figsfolder, cachefolder)
++     }
++   }
++ }
+> 
+> knit_folder("_R", "_posts", "figs/", "_caches/")
+[1] "_R/2016-03-21-test.Rmd"
+[1] "_posts/2016-03-21-test.md"
+Loading required package: knitr
+
+
+processing file: _R/2016-03-21-test.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |......                                                           |   9%
+  ordinary text without R code
+
+  |                                                                         |............                                                     |  18%
+label: unnamed-chunk-1 (with options) 
+List of 1
+ $ include: symbol F
+
+  |                                                                         |..................                                               |  27%
+  ordinary text without R code
+
+  |                                                                         |........................                                         |  36%
+label: unnamed-chunk-2
+  |                                                                         |..............................                                   |  45%
+  ordinary text without R code
+
+  |                                                                         |...................................                              |  55%
+label: unnamed-chunk-3 (with options) 
+List of 1
+ $ echo: logi FALSE
+
+  |                                                                         |.........................................                        |  64%
+  ordinary text without R code
+
+  |                                                                         |...............................................                  |  73%
+label: unnamed-chunk-4
+  |                                                                         |.....................................................            |  82%
+  ordinary text without R code
+
+  |                                                                         |...........................................................      |  91%
+label: unnamed-chunk-5 (with options) 
+List of 1
+ $ results: chr "asis"
+
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+output file: _posts/2016-03-21-test.md
+
+> #knit_folder("_R/drafts", "_drafts", "figs/drafts/")
+> 
+> proc.time()
+   user  system elapsed 
+  0.928   0.120   0.939 
