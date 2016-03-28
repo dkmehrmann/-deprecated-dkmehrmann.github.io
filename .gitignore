@@ -1,3 +1,6 @@
 _site
 .sass-cache
 .jekyll-metadata
+.Rhistory
+.RData
+knit_script.Rout
