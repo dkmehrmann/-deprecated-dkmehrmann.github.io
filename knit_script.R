@@ -1,5 +1,8 @@
 #!/usr/bin/Rscript --vanilla
 
+## Credit to David Robinson
+## https://github.com/dgrtwo/dgrtwo.github.com/blob/master/_scripts/knitpages.R
+
 setwd(".")
 
 # compiles all .Rmd files in _R directory into .md files in Pages directory,
