@@ -5,7 +5,7 @@ title: Blog
 
   <h1 class="page-header">Posts</h1>
 
-  <ul class="well">
+  <ul style="padding-left:0px;">
     {% for post in site.posts %}
 
         <h2>
@@ -19,5 +19,5 @@ title: Blog
     {% endfor %}
   </ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
 
