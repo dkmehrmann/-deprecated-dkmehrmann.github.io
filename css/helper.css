@@ -12,13 +12,15 @@
  .social-media-list {
   text-align: center;
   list-style: none;
-  margin-left: 0; }
+  margin: 0; 
+  padding:0;}
 
  .social-media-list li {
     display: inline;
     padding:10px;
     font-size:16px;
 }
+
 
 body {
     -moz-transform: scale(1.1); /* for Firefox, default 1*/

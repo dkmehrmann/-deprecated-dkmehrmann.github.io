@@ -4,22 +4,16 @@ title: Ideas Journal
 permalink: /ideas/
 ---
 
-<h2>Webpage</h2>
 
-<ul, style="font-weight: bold;">
+<ul style="padding-left:0;">
+  {% for post in site.categories.ideas %}
+    
+      <h3>
+        {{ post.title }}
+      </h3>
+      <span class="text-success">{{ post.section }}</span>
 
-	<li>Try out google analytics</li>
-
-	<li>Spell-checking script for Jekyll posts</li>
-
-	<li>Embedding IPython notebooks</li>
-
-</ul>
-
-
-<h2>Data Science</h2>
-<ul, style="font-weight: bold;">
-	<li>R package for analysis of binary classification</li>
-
-	<li>Time series analysis of hockey playoff runs</li> 
+    <p>{{ post.content }}</p>
+  
+  {% endfor %}
 </ul>

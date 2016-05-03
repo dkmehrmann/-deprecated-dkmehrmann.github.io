@@ -2,7 +2,7 @@
 layout: post
 title:  "Hello World!"
 date:   2016-03-19 16:57:20 -0500
-categories: jekyll
+categories: blog
 author: Andrew Mehrmann
 ---
 
