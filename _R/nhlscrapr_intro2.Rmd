@@ -1,0 +1,34 @@
+---
+title: "nhlscrapr Intro - Part 2"
+author: "Andrew Mehrmann"
+date: "August XX, 2016"
+output: html_document
+---
+
+The nhlscrapr data lends itself well to really basic analyses because there are likely some awesome patterns in the data that don't require complex modeling to uncover. These basic analyses might involve answering questions like "does the home team really have an advantage in hockey?" or "which team took the most shots in the 3rd period last season", for example. These questions and many like it can be answered with a little bit of data manipulation and a simple mean or sum. R has many built-in functions to perform these operations, but there are some more interesting tools out there such as [magrittr] and [dplyr] and I'd like to try them out during this exercise. Of course, this wouldn't be an nhlscrapr tutorial without heavy emphasis on the data so that will of course be the main focus. I'd simply like to learn some new tools along the way. 
+
+
+## Home team Win Percentage of Events
+```{r}
+library(dplyr)
+load('~/NHL/source-data/nhlscrapr-20022003.RData')
+
+grand.data %>%                                        # start with the data
+  filter(etype != 'CHANGE') %>%                       # CHANGE doesn't have a winning team# 
+  group_by(etype) %>%                                 # group by event type
+  summarize(                                         
+    HomeWinPct = mean(ev.team==hometeam)              # calculate home win pct
+  )
+
+```
+
+
+## Shots by Period
+```{r}
+grand.data %>%
+  filter(etype=='SHOT') %>%
+  group_by(period) %>%
+  summarize(
+    sbp = n()
+  )
+```

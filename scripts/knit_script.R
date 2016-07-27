@@ -3,9 +3,9 @@
 ## Credit to David Robinson
 ## https://github.com/dgrtwo/dgrtwo.github.com/blob/master/_scripts/knitpages.R
 
-setwd(".")
+setwd("~/gitrepos/dkmehrmann.github.io/")
 
-# compiles all .Rmd files in _R directory into .md files in Pages directory,
+# compiles all .Rmd files in _R directory into .md files in posts directory,
 # if the input file is older than the output file.
 
 # run ./knitpages.R to update all knitr files that need to be updated.
