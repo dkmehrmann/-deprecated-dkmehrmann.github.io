@@ -14,7 +14,7 @@ I went through a bit of trouble to produce [my last post](/blog/2016/06/20/googl
 
 #### [jekyll.tpl](https://github.com/dkmehrmann/dkmehrmann.github.io/blob/master/scripts/jekyll.tpl)
 
-This is a template file for `nbconvert` to use. You may wish to edit the first few lines that contain the header block. 
+This is a template file for `nbconvert` to use. You may wish to edit the first few lines that contain the header block.
 
 #### [jekyll.py](https://github.com/dkmehrmann/dkmehrmann.github.io/tree/master/_ipynb/jekyll.py)
 
@@ -24,7 +24,14 @@ You'll have to edit lines 18 and 32 to point to your templates and build directo
 
 I needed to execute a bunch of things in succession so I thought I'd write a Bash script to automate the process. It's my first bash script ever, so it certainly has a lot of room for improvement. I don't enjoy how currently you have to run the script from the directory that contains the notebook you wish to convert. I also don't enjoy how a change in the directory structure of my github repo would break everything. That said, I think I've spent enough time on this and leave further tinkering to the future. To get this to work for you, you'll have to edit the BUILD_DIR and POST_DIR.
 
-This will prompt you for the title of your post, which will be inserted as 4th line of the file in the form `title: <your title>`. Prior to that the current date is inserted as the 3rd line of the file. The file will also be named according to the current date so the idea is to run `convert.sh` on the day you want to publish your post. 
+
+## Example
+
+What happens when `convert.sh` is executed? First we call `nbconvert` on the argument (which should be the `.ipynb` file) using the `jekyll.py` config file. This config file also calls the `jekyll.tpl` template from the templates directory specified therein. `nbconvert` deposits the newly created markdown file in the build directory. Most of the heavy lifting is now done, but we still want to add a title and the proper date to both the file name and the YAML. The script will prompt you for the title of your post, which will be inserted as 4th line of the file in the form `title: <your title>`. Prior to that the current date is inserted as the 3rd line of the file. The file will also be named according to the current date so the idea is to run `convert.sh` on the day you want to publish your post. Finally the script checks if the target file in the POST_DIR is older than the file it just created. If so it will overwrite it, but if not it won't to protect you from overwriting newer work.
+
+Say I have a Jupyter Notebook I'd like to publish called `example.ipynb`. I'd put it in my `~/gitrepos/dkmehrmann.github.io/_ipynb` directory, then **from that same directory** call `convert.sh` with `../scripts/convert.sh example.ipynb`. The shell would prompt me for a title and print a success or failure message when it was finished. I keep my notebooks in my build directory to be tidy but you don't have to do it that way. I also need `jekyll.py` to be in the `_ipynb` directory since that's the first place nbconvert will look for the config file. 
+
+***
 
 Please feel free to use the following at your discretion. Credit is listed above to those who did most of the work for the nbconvert stuff and the shell script is entirely mine so I apologize to anyone who gets ahold of it :).
 
