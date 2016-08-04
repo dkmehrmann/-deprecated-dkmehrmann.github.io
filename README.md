@@ -40,5 +40,18 @@ Put the notebook in the `_ipynb` directory and run the script `scripts/convert.s
 
 #### Blogging with R Markdown
 
-**UNDER CONSTRUCTION**
+Set YAML like so within Rmd document:
+
+```
+---
+layout: post
+title: "The Secretary Problem"
+author: "Andrew Mehrmann"
+date: "August 3, 2016"
+output: html_document
+category: blog
+---
+```
+
+then run `scripts/knit_script.R` and change the resulting filename in `_posts` (automate in the future).
 
