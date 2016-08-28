@@ -1,7 +1,6 @@
 ---
 layout: page
 title: GitHub
-permalink: /github/
 ---
 
 <!-- <div class='container' style="margin-right:auto; margin-left:auto;">

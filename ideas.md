@@ -1,16 +1,16 @@
 ---
 layout: page
-title: Ideas Journal
-permalink: /ideas/
+title: Ideas Journal 
 ---
 
 
 <ul style="padding-left:0;">
   {% for post in site.categories.ideas %}
     
-      <h3>
-        {{ post.title }}
-      </h3>
+      <h2>
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+
       <span class="text-success">{{ post.section }}</span>
 
     <p>{{ post.content }}</p>

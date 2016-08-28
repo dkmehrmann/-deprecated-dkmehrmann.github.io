@@ -10,14 +10,13 @@
     fill: #828282; }
 
  .social-media-list {
-  text-align: center;
-  list-style: none;
+  list-style-type:none;
   margin: 0; 
   padding:0;}
 
  .social-media-list li {
     display: inline;
-    padding:10px;
+    padding:4px;
     font-size:16px;
 }
 
@@ -25,7 +24,6 @@
 body {
     -moz-transform: scale(1.1); /* for Firefox, default 1*/
     zoom:110%; /* For Chrome, IE, default 100%*/
-    padding-top: 50px;
 }
 
 .thumbnail {
