@@ -1,6 +1,6 @@
 # dkmehrmann.github.io
 Personal Webpage. Much of the code for creating the layout was borrowed heavily from Hadley Wickham's [Advanced R](http://adv-r.had.co.nz/) and [R Packages](http://r-pkgs.had.co.nz/) sites.
-http://r-pkgs.had.co.nz/
+
 ## Creating Posts
 
 #### Standard Markdown Blog Post
