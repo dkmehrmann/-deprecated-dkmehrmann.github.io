@@ -32,3 +32,38 @@ grand.data %>%
     sbp = n()
   )
 ```
+
+# Graphing Shots
+
+## Frequency of Shots on Goal (minus misses and blocks)
+
+```{r}
+require(MASS)
+source('~/NHL/rink_plotting.R')
+
+load('~/NHL/source-data/nhlscrapr-20132014.RData')
+
+
+# for shots on goal
+grand.data %>%
+  filter(is.finite(xcoord) & is.finite(ycoord)) %>%
+  filter(etype %in% c('SHOT', 'GOAL')) -> shots_plot_data
+dens_SOG <- kde2d(shots_plot_data$ycoord, shots_plot_data$xcoord, 
+                  lims=c(-42, 42, -99, 99)) 
+plot_heatmap(dens_SOG, logscale=F)
+# points(shots_plot_data$ycoord, shots_plot_data$xcoord)
+
+# for goals
+shots_plot_data %>% 
+  filter(etype == 'GOAL') -> goals_plot_data
+dens_GOAL <- kde2d(goals_plot_data$ycoord, goals_plot_data$xcoord, 
+                   lims=c(-42, 42, -99, 99))
+plot_heatmap(dens_GOAL, logscale=F)
+# points(goals_plot_data$ycoord, goals_plot_data$xcoord)
+
+
+# for goals/shots
+dens_norm <- dens_SOG
+dens_norm$z <- dens_GOAL$z / dens_SOG$z
+plot_heatmap(dens_norm, logscale=T)
+```

@@ -1,0 +1,117 @@
+---
+title: "Loops vs. Apply"
+author: "Andrew Mehrmann"
+date: "September 20, 2016"
+output: html_document
+---
+
+## Make Some Data
+
+We want to make a long vector of data that we are going to cube (take `x^3` for `x` in `g`). `rnorm` will make both positive and negative floats to give us something to work with.
+
+```{r}
+g <- rnorm(100000)
+```
+
+## Using Apply
+
+We can apply the function `x^3` to each element in `g` like so:
+
+```{r}
+apply_way <- function(g){
+  return(sapply(g, function(x) x^3))
+}
+```
+
+## Looping and Appending the Result
+
+We can also loop through each element in `g` and cube it, then append the result to an empty result vector.
+
+```{r}
+loop_way <- function(g){
+  res <- c()
+  for (i in g){
+    res <- c(res, i^3)
+  }
+  return(res)
+}
+```
+
+
+## Looping with Indexing
+
+We can also grab each element in `g` by index and append the result to the result vector at the corresponding index. 
+
+```{r}
+loop_way_2 <- function(g){
+  num <- length(g)
+  res <- c()
+  for (i in 1:num){
+    res[i] <- g[i]^3
+  }
+  return(res)
+}
+```
+
+## Looping with Indexing and Preallocation
+
+Finally, we can *preallocate* memory for the result vector by figuring out how long it is supposed to be before looping.
+
+```{r}
+loop_way_3 <- function(g){
+  num <- length(g)
+  res <- vector(mode="numeric", length=num)
+  for (i in 1:num){
+    res[i] <- g[i]^3
+  }
+  return(res)
+}
+```
+
+## Run the Experiment
+
+```{r, cache=T}
+run_sim <- function(g){
+  # apply
+  res1 <- system.time(ap_res <- apply_way(g))
+  # loop-append 
+  res2 <- system.time(lo_res <- loop_way(g))
+  # loop-index
+  res3 <- system.time(lo2_res <- loop_way_2(g))
+  # loop-preallocate
+  res4 <- system.time(lo3_res <- loop_way_3(g))
+  # make a table of results
+  tab <- data.frame(apply=res1[3], 
+                    append=res2[3], 
+                    index=res3[3], 
+                    preallocate=res4[3])
+  return(tab)
+}
+tab <- run_sim(g)
+```
+
+## Results
+
+<style type="text/css">
+.table {
+
+    width: 40%;
+
+}
+</style>
+
+```{r,results='asis', echo=F}
+knitr::kable(tab)
+```
+
+As you can see, preallocation is almost as fast as using `apply` in this case. It is clear why loops in `R` get a bad rap, but most of this is the result of bad code and not an inherent problem with `R`. Always preallocate!
+
+## Bonus - Changing the Length of `g` to 10000
+
+```{r, results='asis'}
+h <- rnorm(10000)
+tab2 <- run_sim(h)
+knitr::kable(tab2)
+```
+
+The results are *roughly* linear in this case. A vector 10% as long takes a little less than 10% of the time to cube for each method.
