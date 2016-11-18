@@ -1,0 +1,42 @@
+---
+title: "NFL Field Goal Release Angles"
+author: "Andrew Mehrmann"
+date: "November 13, 2016"
+output: html_document
+---
+
+http://fivethirtyeight.com/features/kickers-are-forever/
+
+http://www.pro-football-reference.com/years/NFL/kicking.htm
+
+```{r}
+make.miss.fg <- function(dist, deg){
+  upright.width <- 18.5/3
+  abs.deg <- abs(deg)
+  abs.rad <- abs.deg/180 * pi
+  sideways.travel <- dist * atan(abs.rad)
+  sideways.travel < upright.width/2
+}
+
+
+# 2015 data
+fgp.20.29 <- 230/236
+fgp.30.39 <- 256/272
+fgp.40.49 <- 234/309
+fgp.50p <- 104/160
+
+
+angles <- rnorm(1000, mean=0, sd=3.5)
+
+mean(make.miss.fg(25, angles))
+fgp.20.29
+
+mean(make.miss.fg(35, angles))
+fgp.30.39
+
+mean(make.miss.fg(45, angles))
+fgp.40.49
+
+mean(make.miss.fg(55, angles))
+fgp.50p
+```
