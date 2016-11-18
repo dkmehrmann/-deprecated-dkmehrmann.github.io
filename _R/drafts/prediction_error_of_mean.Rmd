@@ -1,0 +1,37 @@
+---
+title: "Prediction Error of the Mean"
+author: "Andrew Mehrmann"
+date: "November 17, 2016"
+output: html_document
+---
+
+Assuming you have data from some distribution, and you want to predict the value of the *next* observation from that distribution, what is a good estimate? Intuitively, guessing the mean of the sample should result in the least error. What is the expectation of that error?
+
+
+```{r}
+n <- 100
+sigma <- 4
+mu <- 10
+
+res <- replicate(10000, expr = {
+  x <- rnorm(n, mu, sigma)
+  x_new <- rnorm(1, mu, sigma)
+  se <- (x_new - mean(x))^2
+  s <- sd(x)
+  est.mse <- s^2 + s^2/n
+  c(se, est.mse)
+})
+# measured mse
+mse <- mean(res[1, ])
+mse
+
+# true mse
+sigma^2 + sigma^2 / n
+
+# mse estimated from data
+est.mse <- mean(res[2, ])
+est.mse
+hist(res[2, ], prob=T)
+var(res[2, ])
+
+```
