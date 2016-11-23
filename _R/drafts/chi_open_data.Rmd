@@ -5,10 +5,14 @@ date: "November 22, 2016"
 output: html_document
 ---
 
+```{r, echo=F}
+knitr::opts_chunk$set(message = F)
+```
+
 As with any API, your first step will be setting up an application so you may receive your API token. Head to the [Data Portal](https://data.cityofchicago.org/login) and create an account, then your application.
 
 
-```{r}
+```{r, message=F}
 dataset <- 'jcxq-k9xf'
 app_token <- getOption('chidatatoken')
 secret_token <- getOption('chidatasecret')
@@ -39,6 +43,8 @@ request_url %>%
 The [City of Chicago Github](https://github.com/Chicago) actually includes an R package for making API requests called [RSocrata](https://github.com/Chicago/RSocrata).
 
 
+Now lets map the Chicago Community areas using [leaflet](https://rstudio.github.io/leaflet/json.html) and a type of file called `geojson`. We can retrieve this from the Chicago Data Portal.
+
 ```{r}
 library(leaflet)
 
@@ -51,10 +57,71 @@ shapefile_url <- makeurl('igwz-8jzy', 'geojson', getOption('chidatatoken'))
 payload <- httr::GET(shapefile_url)
 geojson <- httr::content(payload, 'text')
 
-leaflet() %>% setView(lng = -98.583, lat = 39.833, zoom = 3) %>%
+leaflet() %>% setView(lng = -87.6298, lat = 41.8781, zoom = 9) %>%
   addTiles() %>%
   addGeoJSON(geojson, weight = 1, color = "#444444", fill = T)
+```
 
+```{r}
+library(jsonlite)
+
+# From http://data.okfn.org/data/datasets/geo-boundaries-world-110m
+geojson_parsed <- geojson %>%
+  paste(collapse = "\n") %>%
+  fromJSON(simplifyVector = FALSE)
+
+leaflet() %>% setView(lng = -87.6298, lat = 41.8781, zoom = 9) %>%
+  addTiles() %>%
+  addGeoJSON(geojson_parsed, weight = 1, color = "#444444", fill = T)
+```
+
+```{r}
+income_df <- makeurl('jcxq-k9xf', 'csv', getOption('chidatatoken')) %>%
+  httr::GET() %>%
+  # get the content from the payload
+  httr::content() %>% 
+  arrange(ca)
+
+# get the geojson in list form
+geojson_parsed <- makeurl('igwz-8jzy', 'geojson', getOption('chidatatoken')) %>%
+  httr::GET() %>%
+  httr::content('text') %>%
+  paste(collapse = "\n") %>%
+  fromJSON(simplifyVector = FALSE) 
+
+# set default stype
+geojson_parsed$style <- list(
+  weight = 1,
+  color = "#555555",
+  opacity = 1,
+  fillOpacity = 0.5
+)
+
+# make a color palette from the income dataframe
+pal <- colorQuantile("Greens", income_df$per_capita_income_)
+
+geojson_parsed$features <- 
+  geojson_parsed$features %>%
+  # set the income feature for each CA
+  lapply(function(x) {
+    x$properties$income <- as.numeric(df[as.numeric(x$properties$area_num_1), 'per_capita_income_'])
+    x
+    }) %>%
+  # set the fill color based on income and pallete
+  lapply(function(feat) {
+  feat$properties$style <- list(
+    fillColor = pal(
+      feat$properties$income
+    )
+  )
+  feat
+})
+
+
+# create the map
+leaflet() %>% setView(lng = -87.6298, lat = 41.8781, zoom = 9) %>%
+  addTiles() %>%
+  addGeoJSON(geojson_parsed)
 ```
 
 
