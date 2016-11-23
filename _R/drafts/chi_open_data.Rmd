@@ -1,0 +1,61 @@
+---
+title: "Using the Chicago Open Data Portal"
+author: "Andrew Mehrmann"
+date: "November 22, 2016"
+output: html_document
+---
+
+As with any API, your first step will be setting up an application so you may receive your API token. Head to the [Data Portal](https://data.cityofchicago.org/login) and create an account, then your application.
+
+
+```{r}
+dataset <- 'jcxq-k9xf'
+app_token <- getOption('chidatatoken')
+secret_token <- getOption('chidatasecret')
+
+
+request_url <- sprintf('https://data.cityofchicago.org/resource/%s.csv?$$app_token=%s', dataset, app_token)
+
+payload <- httr::GET(request_url)
+df <- httr::content(payload)
+head(df)
+```
+
+```{r}
+library(dplyr)
+
+# now use dplyr for some analysis
+request_url %>%
+  # get the url
+  httr::GET() %>%
+  # get the content from the payload
+  httr::content() %>% 
+  # sort by per capita income
+  arrange(desc(per_capita_income_)) %>% 
+  # show only the columns we care about
+  select(community_area_name, per_capita_income_)
+```
+
+The [City of Chicago Github](https://github.com/Chicago) actually includes an R package for making API requests called [RSocrata](https://github.com/Chicago/RSocrata).
+
+
+```{r}
+library(leaflet)
+
+makeurl <- function(dataset, filetype, token){
+  request_url <- sprintf('https://data.cityofchicago.org/resource/%s.%s?$$app_token=%s', dataset, filetype, token)
+}
+
+shapefile_url <- makeurl('igwz-8jzy', 'geojson', getOption('chidatatoken'))
+
+payload <- httr::GET(shapefile_url)
+geojson <- httr::content(payload, 'text')
+
+leaflet() %>% setView(lng = -98.583, lat = 39.833, zoom = 3) %>%
+  addTiles() %>%
+  addGeoJSON(geojson, weight = 1, color = "#444444", fill = T)
+
+```
+
+
+
