@@ -4,7 +4,8 @@ date: Jun 20, 2016
 title: "Intro to the Google Maps API"
 categories: blog
 author: Andrew Mehrmann
---- 
+---
+
 I became interested in the Google Maps API shortly before Google Maps came out
 with the "Depart At" and "Arrive By" features that take into consideration the
 usual traffic on your route at a given time. I was taking frequent trips
@@ -32,17 +33,17 @@ fart around. Nonetheless, when you get your key you'll be able to access the
 APIs you've activated. If you create your key for one API, you can activate more
 later. The ones you'll want for this demo are the
 [Directions](https://developers.google.com/maps/documentation/directions/) and
-[Places](https://developers.google.com/places/) APIs. 
+[Places](https://developers.google.com/places/) APIs.
 
 
 {% highlight python %}
 import googlemaps
 from IPython.display import display, HTML, Image
 {% endhighlight %}
- 
+
 I put my key in a text file so it wouldn't be floating around on the web, but
 you may just enter yours right into the Python code as a string. First you need
-to get an instance of the Google Maps API Client: 
+to get an instance of the Google Maps API Client:
 
 
 {% highlight python %}
@@ -51,13 +52,13 @@ key = keyFile.readline().rstrip()
 
 gm = googlemaps.Client(key=key) # get the client
 {% endhighlight %}
- 
+
 ## Directions
 
 You can use the [directions](https://googlemaps.github.io/google-maps-services-
 python/docs/2.4.3/#googlemaps.Client.directions) method to get driving
 directions between an origin and a destination. The result will come back as a
-single-element list unless you specify `alternatives=True`. 
+single-element list unless you specify `alternatives=True`.
 
 
 {% highlight python %}
@@ -79,7 +80,7 @@ print "It would take", time, "to drive from Wrigley field to US Cellular Field"
 {% highlight python %}
 directions_result = gm.directions("1060 W Addison St, Chicago, IL L",
                                   "333 W 35th St, Chicago, IL",
-                                  mode="driving", 
+                                  mode="driving",
                                   alternatives=True)
 {% endhighlight %}
 
@@ -105,15 +106,15 @@ for route in directions_result:
     22 mins
     26 mins
 
- 
+
 There is a lot of information returned by the API and picking through it is an
 arduous task. One of the first things you might want to do though is print out
 directions from one place to another. Each of the components of the directions
-are a "step" in the nomenclature of the API and I've shown one below. 
+are a "step" in the nomenclature of the API and I've shown one below.
 
 
 {% highlight python %}
-directions_result[0]['legs'][0]['steps'][0] 
+directions_result[0]['legs'][0]['steps'][0]
 {% endhighlight %}
 
 
@@ -128,12 +129,12 @@ directions_result[0]['legs'][0]['steps'][0]
      u'travel_mode': u'DRIVING'}
 
 
- 
+
 Lucky for us, they give us instructions in the form of HTML. Before you think
 about parsing it out, remember the
 [IPython.display](http://jeffskinnerbox.me/notebooks/ipython's-rich-display-
 system.html) module. We can actually display these directions as they would look
-in a web browser with a little finagling. 
+in a web browser with a little finagling.
 
 
 {% highlight python %}
@@ -147,7 +148,7 @@ def display_result(result):
     dur = result['legs'][0]['duration']['text'].encode()
     dis = result['legs'][0]['distance']['text'].encode()
     display(HTML("<b>{0}, {1}</b>".format(dur, dis)))
-    
+
     return None
 {% endhighlight %}
 
@@ -279,14 +280,14 @@ Turn <b>right</b> onto <b>W 35th St</b><div style="font-size:0.9em">Destination 
 
 <b>22 mins, 10.4 mi</b>
 
- 
-## Places 
- 
+
+## Places
+
 The Directions API is pretty slick, but up until now we've just given it nicely
 formatted addresses. If I want to feed it place names as I think of them (like
 "cheesie's by the Belmont stop"), I need a different API called the Places API.
 To use the methods below you'll need to activate the Places API before
-proceeding if you haven't already. 
+proceeding if you haven't already.
 
 
 {% highlight python %}
@@ -318,16 +319,16 @@ gm.places("cheesie's belmont")['results'][0]
       u'establishment']}
 
 
- 
+
 You can feed the `places` method a text string and it will give you it's best
 guess(es) as to which place you are referring. So putting those concepts
 together, you can get transit directions between two places via keywords by
-chaining the two methods: 
+chaining the two methods:
 
 
 {% highlight python %}
 def transit_directions(origin, destination):
-    
+
     place_from = gm.places(origin)['results'][0]['formatted_address']
     place_to = gm.places(destination)['results'][0]['formatted_address']
 
@@ -337,16 +338,16 @@ def transit_directions(origin, destination):
                                       alternatives=True)
     return directions_result
 {% endhighlight %}
- 
+
 You can even feed it slang or the name of the place much like you could to
-Google Maps. 
+Google Maps.
 
 
 {% highlight python %}
 directions = transit_directions("Wrigley Field", 'merch mart')
 {% endhighlight %}
- 
-Finall pretty print all the options: 
+
+Finall pretty print all the options:
 
 
 {% highlight python %}
@@ -571,10 +572,10 @@ Walk to 222 W Merchandise Mart Plaza, Chicago, IL 60654, USA
 
 <hr style="height:3px">
 
- 
+
 It will also give you detailed information about the type of transit it is
 sending you on including the stops, line, and headsign of the mode of transit.
-Note these are only returned for transit directions. 
+Note these are only returned for transit directions.
 
 
 {% highlight python %}
@@ -609,7 +610,7 @@ directions[0]['legs'][0]['steps'][1]['transit_details'] #['line']['name'].encode
      u'num_stops': 2}
 
 
- 
+
 There are a great deal of cool things that a creative mind could do with this
 sort of tool. It is possible to add intermediate stops (called waypoints) to
 queries as well as create distance matrices between sets of locations. I think
@@ -618,7 +619,7 @@ that has a powerful implication for certain types of optimization problems
 travel times between points at certain times of the day or days of the week. As
 Google Maps continues to add features and get better at things like predicting
 traffic, this API will become even more useful. And in case you just came here
-for a picture of a train, you can get that too: 
+for a picture of a train, you can get that too:
 
 
 {% highlight python %}
@@ -631,9 +632,9 @@ Image(url="http:" + directions[0]['legs'][0]['steps'][1]['transit_details']['lin
 <img src="http://maps.gstatic.com/mapfiles/transit/iw2/6/us-chicago-subway.png"/>
 
 
- 
+
 [[source code]](https://github.com/dkmehrmann/dkmehrmann.github.io/tree/master/_
-ipynb/google_maps.ipynb) 
+ipynb/google_maps.ipynb)
 
 
 {% highlight python %}

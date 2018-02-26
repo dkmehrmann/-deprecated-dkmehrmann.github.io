@@ -16,9 +16,6 @@ title: Blog
       <span class="text-warning">{{ post.date | date: "%b %-d, %Y" }}</span>
       <p>{{ post.content | strip_html | truncatewords:75}}</p>
       <a href="{{ post.url | prepend: site.baseurl }}">Read more...</a><br>
-      
+
   {% endfor %}
 </ul>
-
-
-

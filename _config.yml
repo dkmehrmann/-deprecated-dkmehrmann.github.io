@@ -9,7 +9,7 @@
 title: Andrew Mehrmann
 email: andrew.mehrmann@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Personal webpage for an aspiring data scientist.
+  Personal webpage for an freelancing data scientist.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://dkmehrmann.github.io" # the base hostname & protocol for your site
 twitter_username: 
@@ -18,4 +18,3 @@ linkedin: https://www.linkedin.com/in/dkmehrmann
 
 # Build settings
 markdown: kramdown
-
