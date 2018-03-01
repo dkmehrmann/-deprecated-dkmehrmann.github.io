@@ -1,6 +1,7 @@
 ---
-layout: page
+layout: default
 title: Hire Me
+navigable: true
 ---
 
 

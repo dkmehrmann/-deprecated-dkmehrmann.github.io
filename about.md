@@ -1,6 +1,7 @@
 ---
-layout: page
+layout: default
 title: About
+navigable: true
 ---
 
 UNDER CONSTRUCTION
