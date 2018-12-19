@@ -4,7 +4,7 @@ title: "The Secretary Problem"
 author: "Andrew Mehrmann"
 date: "August 3, 2016"
 output: html_document
-category: blog
+category: ds
 ---
 
 Finding an apartment is tough, especially in a big city. As a fan of economics, I often think of situations like this in terms of the decisions, alternatives, and preferences we face. An economist might attempt to quantify our preferences by asking questions like *How important is an extra bathroom to you?* or *How strong is your aversion to busy streets?*. While it might be tough to get reliable quantitative estimates of our preferences, its probably far easier for us to compare apartments to one another and decide which ones we like better than others. This could go on for all pairwise combinations of apartments we are considering until we have ranked each apartment in the set. Naturally, the utility-maximizing decision would be to choose our top-ranked apartment and live happily ever after. Unfortunately it doesn't quite work like that in Chicago, as apartments go on and off the market very, very quickly. If you're lucky enough to schedule a showing, you'd better believe there will be other showings to people ready to seal the deal in the near future. You have to act quickly if you want to land a place, but how do you know if you're getting the best deal out of all your options without knowing what you might see in the future?
