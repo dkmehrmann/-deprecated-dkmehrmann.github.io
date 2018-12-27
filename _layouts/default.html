@@ -42,40 +42,30 @@
 
 
 
-      <div class="row">
-        <div class="col-xs-12 col-sm-3" id="nav">
+      {{ content }}
 
-          <h4>On This Page</h4>
 
-          <ul class="list-unstyled" id="toc"></ul>
-
-          <hr>
-
-          <ul class="social-media-list">
-            <li>
-              {% include icon-github.html username=site.github_username %}
-            </li>
-            <li>
-              {% include icon-email.html username=site.email %}
-            </li>
-            <li>
-              {% include icon-linkedin.html %}
-            </li>
-          </ul>
-
-        </div>
-
-        <div id="content" class="col-xs-12 col-sm-9 pull-right">
-          {{ content }}
-        </div>
-
-      </div>
 
       <div class="footer">
+
         <hr>
-        <p>&copy; Andrew Mehrmann. Powered by <a href="http://jekyllrb.com/">jekyll</a>. Source
+
+        <div class="socialBox">
+
+              {% include icon-github.html username=site.github_username %}
+
+
+              {% include icon-email.html username=site.email %}
+
+
+              {% include icon-linkedin.html %}
+
+        </div>
+
+        <p><center>Andrew Mehrmann. Powered by <a href="http://jekyllrb.com/">jekyll</a>. Source
           available on <a href="https://github.com/dkmehrmann/dkmehrmann.github.io/">GitHub</a>.
-        </p>
+        </center></p>
+
       </div>
 
     </div> <!-- /container -->
