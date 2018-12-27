@@ -5,25 +5,56 @@
   display: inline-block;
   width: 24px;
   height: 24px;
-  vertical-align: middle; }
+  vertical-align: middle;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  }
   .icon > svg path {
     fill: #828282; }
 
+
+ .socialBox {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+
+ }
+
+ .flexItem {
+    text-align: center;
+ }
+
+
  .social-media-list {
   list-style-type:none;
-  margin: 0; 
-  padding:0;}
+  margin: 0;
+  padding:0;
+  padding-bottom: 4px;
+  width: 70%;
+
+  display: inline-block;
+
+
+  }
 
  .social-media-list li {
-    display: inline;
     padding:4px;
     font-size:16px;
+}
+
+ .social-media-list li a {
+    text-decoration: none;
 }
 
 
 body {
     -moz-transform: scale(1.1); /* for Firefox, default 1*/
     zoom:110%; /* For Chrome, IE, default 100%*/
+    padding-top: 70px; /* to deal with navbar */
+    max-width: 800px;
+    margin: auto;
 }
 
 .thumbnail {

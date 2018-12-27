@@ -11,7 +11,7 @@ My name is Andrew Mehrmann and I'm a data scientist living in Chicago. In my pro
 # Recent Posts
 
 <ul class="well">
-  {% for post in site.categories.blog limit:1 %}
+  {% for post in site.posts limit:1 %}
 
       <h2>
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>

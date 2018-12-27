@@ -13,7 +13,7 @@ layout: post
 title: "Blogging with IPython Notebooks"
 author: "Andrew Mehrmann"
 date: "June 9, 2016"
-categories: blog
+categories: ds programming
 ---
 
 ```
@@ -49,7 +49,7 @@ title: "The Secretary Problem"
 author: "Andrew Mehrmann"
 date: "August 3, 2016"
 output: html_document
-category: blog
+categories: ds programming
 ---
 ```
 
