@@ -20,6 +20,10 @@
     font-size:16px;
 }
 
+ .social-media-list li a {
+    text-decoration: none;
+}
+
 
 body {
     -moz-transform: scale(1.1); /* for Firefox, default 1*/
@@ -64,3 +68,5 @@ body {
 .tile.tile-purple {
   background-color: rgb(56,180,74);
 }
+
+body { padding-top: 70px; }
