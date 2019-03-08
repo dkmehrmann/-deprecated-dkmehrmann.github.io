@@ -9,16 +9,6 @@ overview: ""
 
 <hr>
 
-> many of the most important impressions and thoughts in a person’s life are ones 
-that flash through your head so fast that fast isn’t even the right word, they seem 
-totally different from or outside of the regular sequential clock time we all live by, and 
-they have so little relation to the sort of linear, one-word-after-anotherword English we all 
-communicate with each other with that it could easily take a whole lifetime just to spell out 
-the contents of one splitsecond’s flash of thoughts and connections, etc. 
-<br> <br>
-\- David Foster Wallace, Good Old Neon (2001)
-
-
 I should mention up front that this is not a strictly professional website. I’ve tried to 
 separate things based on what I perceive the readers interest in me might be, but the 
 content may come as a surprise to some who come expecting to see your standard professional 
