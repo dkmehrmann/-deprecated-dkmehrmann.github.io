@@ -35,7 +35,7 @@ In my analysis, I report two things:
 1. each serious Democratic candidate's polling average in each swing state and
 2. a weighted average of those polls
 
-Serious Democratic candidates are defined as Biden, Warren, Sanders, and Harris. Swing states are defined as IA, TX, OH, GA, NC, AZ, FL, WI, PA, MI, NH, MN, NV, ME, CO, VA, and NM. Here is the current (as of this writing) polling average for each candidate within each state:
+Serious Democratic candidates are defined as **Biden**, **Warren**, **Sanders**, and **Harris** (each are polling over 10% on average in the primary polls). Swing states are defined as IA, TX, OH, GA, NC, AZ, FL, WI, PA, MI, NH, MN, NV, ME, CO, VA, and NM. Here is the current (as of this writing) polling average for each candidate within each state in a head-to-head matchup with Donald Trump:
 
 <table border="1" class="table">  <thead>    <tr style="text-align: right;">      <th>state</th>      <th>eVotes</th>      <th>popvoteDem16</th>      <th>Biden</th>      <th>Warren</th>      <th>Sanders</th>      <th>Harris</th>    </tr>    </thead>  
 <tbody>    
@@ -44,11 +44,17 @@ Serious Democratic candidates are defined as Biden, Warren, Sanders, and Harris.
 
 Cells with `NaN` represent state-candidate combinations for which there are no polls (within the last 8 weeks).
 
-And then the polling averages, weighted by each state's number of electoral votes, imputing each candidate's national polling average for the states with no polls:
+<p align="center">
+  <img src="/figs/2019-07-06-swing_states/poll_avgs_states.png">
+</p>
 
-![center](/figs/2019-07-06-swing_states/polling_avg_trump.png)
+And then the polling averages, weighted by each state's number of electoral votes, ignoring the states for which a candidate has not been represented by a head-to-head poll with Donald Trump:
 
-Given the above, I conclude that **national numbers reflect more support for the Democratic challenger than polls in the swing states.** This is in line with the outcome from last election where the Democratic candidate won the popular vote but lost big where it mattered: in the swing states.
+<p align="center">
+  <img src="/figs/2019-07-06-swing_states/polling_avg_trump.png">
+</p>
+
+Given the above, I conclude that **national numbers reflect more support for the Democratic challenger than polls in the swing states.** This is in line with the outcome from last election where the Democratic candidate won the popular vote but lost big where it mattered. More technical details can be found in the [notebook](https://colab.research.google.com/drive/1sJ0u1JwRWlSUiaww2BMiDCumfnR6YjZt).
 
 The astute observer might observe that a weighted average of polls over a group of states is *the exact thing* I'm hoping to avoid by creating this analysis. Namely, you could still get into a situation where a candidate wins the popular vote across those swing states but receives less electoral college votes than their competitor. That criticism is certainly valid, but I think the average of polls in swing states is still a more valuable figure than what is reported by national polls. At the very least, it probably reduces whatever bias is resulting in the discrepancy between electoral college and popular vote.
 
@@ -74,10 +80,11 @@ To me, Collaboratory is a great tool for this. It is extremely easy to perform q
 
 I understand that this is what GitHub promises, but I have found that while GitHub is good for Data Science workflows, it is not great for quick and dirty analyses that might become irrelevant during the next election cycle. Let's face it: we don't *always* need to spin up a Conda environment, run through the rigamarole of pull requests, and dammit if we didn't forget to pull the master before creating the branch we just spent days on and now there are conflicts.
 
-I know this might get me crucified by the version control evangelists, and it's absolutely possible I'm wrong, but if we as a community have sort of come to a consensus on Jupyter as the almighty IDE then it's high time we started taking full advantage of it by using a platform built specifically for notebooks.
+I know this might get me crucified by the version control evangelists, and it's absolutely possible I'm wrong, but if we as a (Python) data science community have sort of come to a consensus on Jupyter as the almighty IDE then it's high time we started taking full advantage of it by using a platform built specifically for notebooks.
 
 Of course it is unlikely someone like me or perhaps yourself without a platform or online following will have much impact on the outcome of this election, or the way we as an open source data science community analyze political data. But I believe it is our civic duty - just like voting - to contribute to it in a responsible and ethical manner in the most effective way we know how, and it probably looks something like `import pandas as pd`.
 
+<hr>
 
 ## Appendix: Tools
 
@@ -91,13 +98,11 @@ I'd also like to mention a couple more (some of which are in the previous articl
 
 * [voteview](https://voteview.com/data)
 * [OpenSecrets](https://www.opensecrets.org/open-data)
-
-(give a blurb about each)
-
+* [FiveThirtyEight](https://data.fivethirtyeight.com/)
 
 I usually prefer APIs to flat data sets because updating an analysis becomes as easy as rerunning the code (instead of redownloading the dataset first).
 
-Standing an app on top of data science analyses is not trivial, and most of the time I prefer to skip that step and simply use a notebook instead. Which brings me to my next point...
+Standing an app on top of data science analyses is not trivial, and most of the time I prefer to skip that step and simply use a notebook instead. Which brings me to my next point tool...
 
 
 ### Google Collaboratory
