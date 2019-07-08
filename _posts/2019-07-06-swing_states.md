@@ -6,6 +6,9 @@ date: "July 6, 2019"
 output: html_document
 category: ds
 ---
+<hr>
+*The [notebook for this analysis](https://colab.research.google.com/drive/1sJ0u1JwRWlSUiaww2BMiDCumfnR6YjZt) will be updated periodically with the most recent results. You can also create a copy and run it yourself to get near-real-time updates.*
+<hr>
 
 I try to stay as far away from "politics" as possible. Facts often go by the wayside and we're left bickering in circles about who's righteous and who's evil and chances are we all want the same things anyway so really what's the point. I'm not going to change your mind and you're not going to change mine because we have fundamentally different values. So let's just have a beer and do our disagreeing at the ballot box, right?
 
@@ -19,21 +22,27 @@ In response to these poisonous transgressions I'd like to offer an antidote. Ins
 
 If it hasn't become clear yet, my goal with this article is to *inspire* you to do something good with your data and programming skills, specifically in response to what will be arguably one of the most important and public uses of data in recent history: the 2020 US Presidential Election. If punctuating my charge with over-the-top motivational language is what it takes then I'll gladly field the embarrassment of looking cheesy to do so.
 
-It doesn't require a degree in Statistics or a public platform like a blog or website in order to serve the public interest (although those things help but only one of them is free). It just takes critical thinking, effort, and the desire to send a better-informed electorate to the ballot box in 2020. We have the power to choose, in this not-so-small way, the course of data history. So how do you want that story to go?
+It doesn't require a degree in statistics or a public platform like a blog or website in order to serve the public interest (those things help but only one of them is free). It just takes critical thinking, effort, and the desire to send a better-informed electorate to the ballot box in 2020. We have the power to choose, in this not-so-small way, the course of data history. So how do you want that story to go?
 
 
 ## Analysis of the 2020 Democratic Primary Polls in Swing States
 
 Keeping in spirit with the above, I created a simple analysis of polling data that answers a question voters seem to care about and that I haven't seen answered very well before: *if the Democrats want to beat Donald Trump, who should they choose as their candidate in the Primary?* I have seen lots of talk about an establishment Democrat (i.e. Joe Biden) having better chances than a more progressive candidate (e.g. Warren, Sanders), and indeed [this is an issue Democratic voters seem to care about](https://fivethirtyeight.com/features/democrats-care-more-about-winning-than-usual/).
 
-To see which current Democratic contender has the best odds at beating Trump, one might be tempted to look at one of the numerous national-level polls that pit each candidate against the incumbent president. The problem with national-level polls is that they represent a sample statistic of *the popular vote*, and we saw *just last election* that winning the popular vote doesn't necessarily get you elected. It follows that to understand a candidate's chances of getting elected, you have to take the electoral college into account.
+To see which current Democratic contender has the best odds at beating Trump, one might be tempted to look at one of the numerous national-level polls that pit each candidate against the incumbent president. These polls ask a set of questions that look like this:
+
+> If the presidential race in 2020 was between Donald Trump and Joe Biden, who would you vote for?
+
+Source: [Rasmussen Reports](http://www.rasmussenreports.com/public_content/politics/questions/pt_survey_questions/july_2019/questions_white_house_watch_biden_vs_trump_june_23_27_and_june_30_july_2_2019)
+
+The problem with national-level polls is that they represent a sample statistic of *the popular vote*, and we saw *just last election* that winning the popular vote doesn't necessarily get you elected. It follows that to understand a candidate's chances of getting elected, you have to take the electoral college into account.
 
 To do so, I used data from [FiveThirtyEight](https://data.fivethirtyeight.com/) to create an [Analysis of the 2020 Democratic Primary Polls in Swing States](https://colab.research.google.com/drive/1sJ0u1JwRWlSUiaww2BMiDCumfnR6YjZt). It isn't very technical and it didn't require a whole lot of time, but I had fun doing it and learning about Google Collaboratory (see [appendix](#appendix-tools)) while using data to answer a direct question I was interested in.
 
 In my analysis, I report two things:
 
 1. each serious Democratic candidate's polling average in each swing state and
-2. a weighted average of those polls
+2. a weighted average of the polls the swing states for each candidate
 
 Serious Democratic candidates are defined as **Biden**, **Warren**, **Sanders**, and **Harris** (each are polling over 10% on average in the primary polls). Swing states are defined as IA, TX, OH, GA, NC, AZ, FL, WI, PA, MI, NH, MN, NV, ME, CO, VA, and NM. Here is the current (as of this writing) polling average for each candidate within each state in a head-to-head matchup with Donald Trump:
 
@@ -42,7 +51,7 @@ Serious Democratic candidates are defined as **Biden**, **Warren**, **Sanders**,
 <tr>      <th>IA</th>      <td>6</td>      <td>0.449</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    
 <tr>      <th>TX</th>      <td>38</td>      <td>0.453</td>      <td>0.522</td>      <td>0.495</td>      <td>0.484</td>      <td>0.478</td>    </tr>    <tr>      <th>OH</th>      <td>18</td>      <td>0.457</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>GA</th>      <td>16</td>      <td>0.473</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>NC</th>      <td>15</td>      <td>0.481</td>      <td>0.509</td>      <td>0.498</td>      <td>0.525</td>      <td>0.491</td>    </tr>    <tr>      <th>AZ</th>      <td>11</td>      <td>0.481</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>FL</th>      <td>29</td>      <td>0.494</td>      <td>0.513</td>      <td>0.503</td>      <td>0.512</td>      <td>0.491</td>    </tr>    <tr>      <th>WI</th>      <td>10</td>      <td>0.496</td>      <td>0.535</td>      <td>0.500</td>      <td>0.540</td>      <td>NaN</td>    </tr>    <tr>      <th>PA</th>      <td>20</td>      <td>0.496</td>      <td>0.539</td>      <td>0.485</td>      <td>0.517</td>      <td>0.500</td>    </tr>    <tr>      <th>MI</th>      <td>16</td>      <td>0.499</td>      <td>0.545</td>      <td>0.507</td>      <td>0.532</td>      <td>0.518</td>    </tr>    <tr>      <th>NH</th>      <td>4</td>      <td>0.502</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>MN</th>      <td>10</td>      <td>0.508</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>NV</th>      <td>6</td>      <td>0.513</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>ME</th>      <td>4</td>      <td>0.516</td>      <td>0.540</td>      <td>0.520</td>      <td>0.530</td>      <td>0.520</td>    </tr>    <tr>      <th>CO</th>      <td>9</td>      <td>0.527</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>VA</th>      <td>13</td>      <td>0.528</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>NM</th>      <td>5</td>      <td>0.547</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>  </tbody></table>
 
-Cells with `NaN` represent state-candidate combinations for which there are no polls (within the last 8 weeks).
+`eVotes` is the number of electoral votes in each state. `popvoteDem16` is the proportion relative to Trump that HRC won in 2016. Cells with `NaN` represent state-candidate combinations for which there are no polls (within the last 8 weeks).
 
 <p align="center">
   <img src="/figs/2019-07-06-swing_states/poll_avgs_states.png">
@@ -54,21 +63,23 @@ And then the polling averages, weighted by each state's number of electoral vote
   <img src="/figs/2019-07-06-swing_states/polling_avg_trump.png">
 </p>
 
-Given the above, I conclude that **national numbers reflect more support for the Democratic challenger than polls in the swing states.** This is in line with the outcome from last election where the Democratic candidate won the popular vote but lost big where it mattered: the electoral college. So why are we using data in a way that mimics the exact same mistakes we made last cycle? There is nothing *wrong* with reporting National Polls, but to do so without serious qualification is irresponsible at best. It is the duty of those reporting these figures to inform the electorate that they do not accurately represent that which they are being purported to: each candidates "electability" (more on this below).
+Given the above, I conclude that **national numbers reflect more support for the Democratic challenger than polls in the swing states.** It is of course possible that the many "missing" polls are contributing some bias towards Trump in these polls, or that the difference between the National and Swing State numbers are due to chance, but this finding is in line with expectation. Recall the outcome from last election where the Democratic candidate won the popular vote but lost big where in the electoral college and especially in the swing states.
 
-Remember that the point was to inform Democratic Primary voters about each candidate's electability in a more nuanced way than what is reported in national polls. A notion of electability may entice us to vote for a candidate based on their ability to win rather than our agreement with their views. This isn't inherently wrong - it's just game theoretically rational - but it can be damaging to certain types of candidates, [especially minorities and women](https://www.avalanchestrategy.com/electability). Regardless of your opinion on who is best suited to serve as president, it is important that we don't rely on skewed data inform our ideas of who is electable.
+We can also investigate the rank ordering of each candidate based on their likelihood to beat Trump and compare the rankings based on national polls to rankings based on just polls in the swing states. Ignoring the risks (mentioned below) of taking an average over states, it turns out that the national polls currently suggest the same ranking of candidates as the polls within the swing states. In other words, the national polls pick the same winner (and second, third, and forth place) as my analysis of just the swing states. It will be interesting to see if those orderings change as more polls come in, but at least for now the national polls aren't misleading on who is most likely to win against Trump (it's still Biden), they're just misleading on how likely each candidate is to win.
+
+So why are the media using data in a way that mimics the exact same mistakes we made last cycle (i.e. assuming the popular vote is synonymous with the EC)? There is nothing *wrong* with reporting National Polls, but to do so without serious qualification is irresponsible at best and deliberately misleading at worst. It is the duty of those reporting these figures to inform the electorate that they do not accurately represent that which they are being purported to: each candidates "electability."
 
 *NB: The astute observer might observe that a weighted average of polls over a group of states is the exact thing I'm hoping to avoid by creating this analysis. Namely, you could still get into a situation where a candidate wins the popular vote across those swing states but receives less electoral college votes than their competitor. That criticism is certainly valid, but I think the average of polls in swing states is still a more valuable figure than what is reported by national polls. At the very least, it probably reduces (but doesn't eliminate) whatever bias is resulting in the discrepancy between electoral college and popular vote. More technical details can be found in the [notebook](https://colab.research.google.com/drive/1sJ0u1JwRWlSUiaww2BMiDCumfnR6YjZt).*
 
-## Possible Use Cases for Voters
-
-Underlying this whole thing is the concept of [tactical voting](https://en.wikipedia.org/wiki/Tactical_voting), which basically states that voters may not (or should not) vote for their *sincere preference* when there is rational reason to vote some other way (and there are several, like voting for Biden to ensure Trump is beaten). In other words, each voter would select the candidate that maximizes utility, with each candidates expected utility given as the product of their probability of winning and the utility that voter gains by the candidate becoming president. Or something like that.
-
-The point is that each candidate's chances of wining the general election should play a huge part in who a voter choses in the primaries. Since data works best if you ask it specific questions, we might reformulate our inquiry as something like *how likely is each candidate to beat Trump in the General Election*. Answering such a question would require a much more nuanced analysis, but at least the polling numbers in this analysis provide a slightly clearer insight into the answer than national polls do.
-
-We can also investigate the rank ordering of each candidate based on their likelihood to beat Trump and compare the national numbers to just those in the swing states. Ignoring the aforementioned risks of taking an average over states, it turns out that currently the national polls suggest the same ranking of candidates as the polls within the swing states. In other words, the national polls pick the same winner (and second, third, and forth place) as my analysis of just the swing states. It will be interesting to see if those orderings change as more polls come in.
-
 *NB: Although my notebook looks really fancy with the Python code and statistical language, an analysis is only as good as the data it's built on and mine isn't built on much. It's more of an exposition and possible starting point for others to explore their curiosities.*
+
+## Why this Matters
+
+Underlying this whole thing is the concept of [tactical voting](https://en.wikipedia.org/wiki/Tactical_voting), which basically states that voters may not (or should not) vote for their *sincere preference* when there is a rational reason to vote some other way (and there are several, like voting for Biden to ensure Trump is beaten). In other words, each voter would select the candidate that maximizes utility, with each candidates expected utility given as the product of their probability of winning and the utility that voter gains by the candidate becoming president. Or something like that.
+
+A notion of electability may entice us to vote for a candidate based on their ability to win rather than our agreement with their views. This isn't inherently wrong - it's just game theoretically rational - but it can be damaging to certain types of candidates, [especially minorities and women](https://www.avalanchestrategy.com/electability) who are perceived as less electable than they might rightly be. Regardless of your opinion on who is best suited to serve as president, it is important that we don't rely on skewed data to inform our ideas of a candidate's chances of winning before they've even been given a chance to run.
+
+The point is that each candidate's chances of wining the general election should (and do) play a huge part in who a voter choses in the primaries, but we're relying on biased data to inform that decision. My analysis attempts to paint a clearer picture of who is "electable" so we don't fall back on outdated notions and misleading rhetoric that may perpetuate a status quo that is likely maintained by those in power who wish to keep it. To be sure, my simple average of polls makes no promises as to what each candidate's likelihood of winning is, but I hope to at least steer the conversation back in a fair and empirical direction.
 
 ## Conclusion
 
@@ -76,19 +87,15 @@ To me, politics can be fun and interesting and it's not as hard as you think to 
 
 As data practitioners, political campaigns are our time to shine - where people say things like "statistical significance" on national television! Instead of vilifying those who wield statistics incorrectly or provoking our friends into an argument over minimum wage, let's do something productive with that superiority complex that's all too common of us people "in the know": let's dig into the data and see what we can find out.
 
-To me, Collaboratory is a great tool for this. It is extremely easy to perform quick analyses because we don't have to set up a compute environment on our machines. We can share our work so it can be peer reviewed (reminder to check out [my notebook](https://colab.research.google.com/drive/1sJ0u1JwRWlSUiaww2BMiDCumfnR6YjZt)), and extend each others' work with the click of a button.
+It isn't a stretch to say that data, used improperly or maliciously, represents a threat to our democratic institutions. We've seen how people with skills like ours can use it to misinform and manipulate an unwitting population, and until regulation catches up I don't see any way to effectively stop it. But we've also seen how it can be used to save lives and create wellbeing, and I don't see why it can't be used for good in politics too. This is bigger than trying to get your party elected: it's about ensuring the bad guys with data don't use it to infringe on personal liberties like we've seen time and again, and the only way to stop a bad guy with data is a good guy with data.
 
-I understand that this is what GitHub promises, but I have found that while GitHub is good for Data Science workflows, it is not great for quick and dirty analyses that might become irrelevant during the next election cycle. Let's face it: we don't *always* need to spin up a Conda environment, run through the rigamarole of pull requests, and dammit if we didn't forget to pull the master before creating the branch we just spent days on and now there are conflicts.
-
-I know this might get me crucified by the version control evangelists, and it's absolutely possible I'm wrong, but if we as a (Python) data science community have sort of come to a consensus on Jupyter as the almighty IDE then it's high time we started taking full advantage of it by using a platform built specifically for notebooks.
-
-Of course it is unlikely someone like me or perhaps yourself without a platform or online following will have much impact on the outcome of this election, or the way we as an open source data science community analyze political data. But I believe it is our civic duty - just like voting - to contribute to it in a responsible and ethical manner in the most effective way we know how, and it probably looks something like `import pandas as pd`.
+Of course it is unlikely someone like me or perhaps yourself without a platform or online following will have much impact on the outcome of this election, or the way we as a society leverage the incredible power of data. But I believe it is our civic duty - just like voting - to contribute to our increasingly analytical world in a responsible and ethical manner in the most effective way we know how, and it probably looks something like `import pandas as pd`.
 
 <hr>
 
 ## Appendix: Tools
 
-If you're digging what I've said so far, maybe know a bit of Python, and aren't exactly an expert on politics or analyzing political data (call it politicurious, maybe?), I'd like to turn your attention to three specific things I think can help turn your newfound energy into a productive coding session.
+If you're digging what I've said so far, maybe know a bit of Python, and aren't exactly an expert on politics or analyzing political data (call it politicurious, maybe?), I'd like to turn your attention to two specific things I think can help turn your newfound energy into a productive coding session.
 
 ### Free, Open Political Data
 
@@ -100,7 +107,7 @@ I'd also like to mention a couple more (some of which are in the previous articl
 * [OpenSecrets](https://www.opensecrets.org/open-data) - Lots of data on money in politics, like campaign contributions and lobbying efforts
 * [FiveThirtyEight](https://data.fivethirtyeight.com/) - Great for polling data, haven't use it for much else but they publish lots of the data behind their awesome analyses
 
-I usually prefer APIs to flat data sets because updating an analysis becomes as easy as rerunning the code (instead of redownloading the dataset first), and that might be especially important when analyzing a time-sensitive event like an election. One might be tempted to create an app that runs the analysis for each user, and if you plan on bringing an interactive experience to a broad audience of non-programmers that is probably your only option. Standing an app on top of a data science analysis is not trivial however, and for most of my analyses I prefer to skip that step and simply use a notebook instead. Which brings me to my next point tool...
+I usually prefer APIs to flat data sets because updating an analysis becomes as easy as rerunning the code (instead of redownloading the dataset first), and that might be especially important when analyzing a time-sensitive event like an election. One might be tempted to create an app that runs the analysis for each user, and if you plan on bringing an interactive experience to a broad audience of non-programmers that is probably your best option. Standing an app on top of a data science analysis is not trivial however, and for most of my analyses I prefer to skip that step and simply use a notebook instead. Which brings me to my next point tool...
 
 
 ### Google Collaboratory
@@ -108,3 +115,7 @@ I usually prefer APIs to flat data sets because updating an analysis becomes as 
 [Google Collaboratory](https://colab.research.google.com/) is a space for you to host and run Jupyter notebooks in the cloud. If you have a Google account (like most of us do) it is free to use and you'll be up and running in seconds. Gone are the days of installing Anaconda, configuring Jupyter, forgetting your password, looking up how to reset the password, installing packages, and having your session die when you accidentally close your laptop. What's especially exciting is that these notebooks are hosted and run in their own cloud-based runtime, and you can even use a GPU backend for training neural nets, for example.
 
 Obviously having some control over your runtime is necessary for many applications, but for the most common (e.g. quick and dirty exploratory analysis, testing a code chunk, doing a coding challenge, etc.) I find it easier to have that abstracted away. Indeed, the easier it is to get up and running the more likely I am to start a new project. Reducing the barrier to entry for data science projects like this might have profound impacts on the global propensity to do good data science. In a less idealistic and more realistic sense, this is a really cool tool I think everybody should have in their toolbox, and when time is of the essence (like it is during an election cycle) it might just be the best tool for the job.
+
+You can also share your work so it can be peer reviewed (reminder to check out [my notebook](https://colab.research.google.com/drive/1sJ0u1JwRWlSUiaww2BMiDCumfnR6YjZt)), and extend each another's work with the click of a button. I understand that this is what GitHub promises, but I have found that while GitHub is good for Data Science workflows, it is not great for quick and dirty analyses that might become irrelevant during the next election cycle. Let's face it: we don't *always* need to spin up a Conda environment, run through the rigamarole of pull requests, and dammit if we didn't forget to pull the master before creating the branch we just spent days on and now there are conflicts.
+
+I know this might get me crucified by the version control evangelists, and it's absolutely possible I'm wrong, but if we as a (Python) data science community have sort of come to a consensus on Jupyter as the almighty IDE then it's high time we started taking full advantage of it by using a platform built specifically for notebooks.
