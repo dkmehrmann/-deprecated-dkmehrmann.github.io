@@ -4,7 +4,7 @@ title: "This Election, use your Data Skills for Good"
 author: "Andrew Mehrmann"
 date: "July 6, 2019"
 output: html_document
-category: ds
+category: election
 ---
 
 I try to stay as far away from "politics" as possible. Facts often go by the wayside and we're left bickering in circles about who's righteous and who's evil and chances are we all want the same things anyway so really what's the point. I'm not going to change your mind and you're not going to change mine because we have fundamentally different values. So let's just have a beer and do our disagreeing at the ballot box, right?
