@@ -7,7 +7,6 @@ output: html_document
 categories: election ds
 ---
 
-<hr>
 *The [notebook for this analysis](https://colab.research.google.com/drive/14zIpFh00cR6n8BaOB-JxIFd3DRrpFeGZ) is available via Collaboratory. You can also create a copy or [run it yourself](https://stackoverflow.com/questions/52011084/what-is-playground-mode-in-googles-colaboratory)*
 <hr>
 
@@ -15,7 +14,10 @@ categories: election ds
 
 I saw a Tweet (via Reddit) recently that caught my eye:
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Reagan took the deficit from 70 billion to 175 billion.
+<center>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">
+Reagan took the deficit from 70 billion to 175 billion.
 Bush 41 took it to 300 billion.
 Clinton got it to zero.
 Bush 43 took it from 0 to 1.2 trillion.
@@ -23,6 +25,7 @@ Obama halved it to 600 billion.
 Trump’s got it back to a trillion.
 
 Morons: “Democrats cause deficits.”</p>&mdash; Alex Cole (@acnewsitics) <a href="https://twitter.com/acnewsitics/status/1153694545986621442?ref_src=twsrc%5Etfw">July 23, 2019</a></blockquote>
+</center>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
