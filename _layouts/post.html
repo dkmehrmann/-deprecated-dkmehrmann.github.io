@@ -19,24 +19,30 @@ layout: default
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
 
+<style>
+@media (max-width: 767px) {
+    .affix {
+        position: static;
+    }
+}
+</style>
 
 <div class="row">
+  <div class="col-xs-12 col-sm-3">
 
-  <div id='content'>
+      <div class='affix'>
+        <h4>Table of Contents</h4>
+        <ul class="list-unstyled" id="toc"></ul>
+      </div>
 
-    <h1 class="page-header">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+  </div>
 
-    <hr>
+  <div id="content" class="col-xs-12 col-sm-9 pull-right">
 
-    <div>
-      <h4>Table of Contents</h4>
-      <ul class="list-unstyled" id="toc"></ul>
-    </div>
+      <h1 class="page-header">{{ page.title }}</h1>
+      <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
 
-    <hr>
-
-    {{ content }}
+      {{ content }}
 
   </div>
 
