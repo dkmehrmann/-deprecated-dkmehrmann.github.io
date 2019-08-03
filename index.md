@@ -5,7 +5,7 @@ navigable: false
 ---
 
 ## Featured
-
+<hr>
 Check out my analysis of the [2020 Election ->](/election)
 
 ## Latest
