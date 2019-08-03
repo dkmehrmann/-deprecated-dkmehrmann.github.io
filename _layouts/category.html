@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: page
 ---
 
-<h2>Posts</h2>
+<h2>{{page.title}}</h2>
 
 <hr>
 
@@ -17,7 +17,7 @@ layout: default
     <br>
 
     {% for category in post.categories %}
-      <a href="/{{category}}" class="btn btn-warning btn-xs">{{category}}</a>
+      <a href="/{{category}}" class="btn btn-warning btn-xs" style='margin-top:8px; margin-bottom:8px;'>{{category}}</a>
     {% endfor %}
 
     <p>{{ post.content | strip_html | truncatewords:75}}</p>

@@ -53,8 +53,15 @@ body {
     -moz-transform: scale(1.1); /* for Firefox, default 1*/
     zoom:110%; /* For Chrome, IE, default 100%*/
     padding-top: 70px; /* to deal with navbar */
-    max-width: 800px;
+    /* max-width: 800px; */
     margin: auto;
+}
+
+.content {
+  max-width:800px;
+  padding:10px;
+  margin:auto;
+
 }
 
 .thumbnail {

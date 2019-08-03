@@ -1,10 +1,14 @@
 ---
-layout: default
+layout: homepage
 title: Home
 navigable: false
 ---
 
-# Latest
+## Featured
+
+Check out my analysis of the [2020 Election ->](/election)
+
+## Latest
 
 <hr>
 
@@ -17,8 +21,10 @@ navigable: false
 
       <span class="text-warning">{{ post.date | date: "%b %-d, %Y" }}</span>
 
+      <br>
+
       {% for category in post.categories %}
-        <a href="/{{category}}" class="btn btn-warning btn-xs">{{category}}</a>
+        <a href="/{{category}}" class="btn btn-warning btn-xs" style='margin-top:8px; margin-bottom:8px;'>{{category}}</a>
       {% endfor %}
 
       <p>{{ post.content | strip_html | truncatewords:75}}</p>
