@@ -7,13 +7,9 @@ overview: ""
 
 # About
 
-My name is Andrew Mehrmann and I'm a data scientist living in Chicago. In my professional life I sit at the intersection of Data Science and engineering, creating tools and services to bridge the gap between data science and the "real world". These may include platforms for machine learning deployment, interactive applications for exploring data, or web services for delivering insights to customers. My mission is to enable data scientists do great work and see that work through to fruition. You can read more about me [below](#personal-statement).
+My name is Andrew Mehrmann and I'm a data scientist. I'm currently "studying abroad" from the professional world but my more permanent home is in Chicago. In the past I have worked mostly in the insurance industry at the intersection of data science and engineering, creating tools to bridge the gap between data science and the "real world." One of these tools enabled randomized experimentation on a large scale at a Fortune 100 company, and I learned a whole lot about product management and microservices while doing it.
 
-<hr>
-
-## Hire Me
-
-UNDER CONSTRUCTION, but in the mean time you may browse [my resume]({{site.resume}}) or visit my [Upwork](https://www.upwork.com/o/profiles/users/_~015b2f06ef4fb3979f/) or [Freelancer](https://www.freelancer.com/u/andrewmehrmann) profiles.
+If you're interested in my work, you can browse [my resume]({{site.resume}}) or visit my [Upwork](https://www.upwork.com/o/profiles/users/_~015b2f06ef4fb3979f/) and [Freelancer](https://www.freelancer.com/u/andrewmehrmann) profiles, or stick around and read some of my posts.
 
 <hr>
 
