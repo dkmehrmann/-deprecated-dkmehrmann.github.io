@@ -59,7 +59,7 @@ I’m not an expert on the nuanced costs and benefits of a government holding de
 
 Not only is our debt increasing, but the rate at which it is increasing is increasing. This means that the deficit must be increasing year over year. In mathematical terms, you can think of the deficit as the *first derivative* of the debt, and the year over year change in deficit (Δ Deficit) as the *second derivative* of the debt.
 
-If you're not into math jargon, just understand that debt is the accumulation of deficits, and deficits are the accumulation of changes in the deficit. Mouse over the columns Deficit and Δ Deficit to see how this works - **the yellow cells of a lower order metric add to the green cell.**
+If you're not into math jargon, just understand that debt is the accumulation of deficits, and deficits are the accumulation of changes in the deficit. Mouse over (or click on mobile) the columns Deficit and Δ Deficit to see how this works - **the yellow cells of a lower order metric add to the green cell.**
 
 <style type="text/css">
 
