@@ -1,23 +1,31 @@
 ---
-layout: default
+layout: homepage
 title: Home
 navigable: false
 ---
 
-# Hello!
+## Featured
+<hr>
+Check out my analysis of the [2020 Election ->](/election)
 
-My name is Andrew Mehrmann and I'm a data scientist living in Chicago. In my professional life I sit at the intersection of Data Science and engineering, creating tools and services to bridge the gap between data science and the "real world". These may include platforms for machine learning deployment, interactive applications for exploring data, or web services for delivering insights to customers. My mission is to enable data scientists do great work and see that work through to fruition. You can read more about me [here](/about).
+## Latest
 
-# Recent Posts
+<hr>
 
-<ul class="well">
-  {% for post in site.posts limit:1 %}
+<ul style="padding-left:0px;">
+  {% for post in site.posts limit:3 %}
 
       <h2>
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </h2>
 
       <span class="text-warning">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+      <br>
+
+      {% for category in post.categories %}
+        <a href="/{{category}}" class="btn btn-warning btn-xs" style='margin-top:8px; margin-bottom:8px;'>{{category}}</a>
+      {% endfor %}
 
       <p>{{ post.content | strip_html | truncatewords:75}}</p>
 

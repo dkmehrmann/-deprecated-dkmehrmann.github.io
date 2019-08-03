@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 ---
 
 
@@ -27,14 +27,7 @@ layout: default
 }
 </style>
 
-<style>
-:target::before {
-  content: "";
-  display: block;
-  height: 60px; /* fixed header height*/
-  margin: -60px 0 0; /* negative fixed header height */
-}
-</style>
+
 
 <div class="row">
   <div class="col-xs-12 col-sm-3">
@@ -49,7 +42,14 @@ layout: default
   <div id="content" class="col-xs-12 col-sm-9 pull-right">
 
       <h1 class="page-header">{{ page.title }}</h1>
-      <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+      <p class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+        {% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
+        <br>
+        {% for category in page.categories %}
+          <a href="/{{category}}" class="btn btn-warning btn-xs" style='margin-top:8px;'>{{category}}</a>
+        {% endfor %}
+      </p>
 
       {{ content }}
 

@@ -14,17 +14,15 @@
 
   <body>
 
-    <div class="container">
-
         <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
+          <div class="w-100">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/index.html">{{ site.title }}</a>
+              <a class="navbar-brand" href="/index.html">AM</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
@@ -35,6 +33,10 @@
                 <li class="nav-item"><a class="nav-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
                 {% endif %}
               {% endfor %}
+              </ul>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item" style="margin-right:15px"><a class='nav-link' href="/about.html">About</a></li>
               </ul>
             </div>
           </div>
@@ -68,8 +70,6 @@
 
       </div>
 
-    </div> <!-- /container -->
-
   <script src="//code.jquery.com/jquery.js"></script>
   <script src="{{ '/css/bootstrap.min.js' | prepend: site.baseurl }}"></script>
   <script src="{{ '/css/toc.js' | prepend: site.baseurl }}"></script>
@@ -85,6 +85,10 @@
 </script>
   <script>
     jQuery(document.links) .filter(function() { return this.hostname != window.location.hostname; }) .attr('target', '_blank');
+  </script>
+
+  <script>
+    jQuery(document.images).addClass('img-responsive');
   </script>
   </body>
 </html>

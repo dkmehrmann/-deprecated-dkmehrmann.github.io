@@ -53,8 +53,15 @@ body {
     -moz-transform: scale(1.1); /* for Firefox, default 1*/
     zoom:110%; /* For Chrome, IE, default 100%*/
     padding-top: 70px; /* to deal with navbar */
-    max-width: 800px;
+    /* max-width: 800px; */
     margin: auto;
+}
+
+.content {
+  max-width:800px;
+  padding:10px;
+  margin:auto;
+
 }
 
 .thumbnail {
@@ -94,4 +101,12 @@ body {
 
 .tile.tile-purple {
   background-color: rgb(56,180,74);
+}
+
+/* In-page links go 60px higher to account for the header */
+:target::before {
+  content: "";
+  display: block;
+  height: 60px; /* fixed header height*/
+  margin: -60px 0 0; /* negative fixed header height */
 }
