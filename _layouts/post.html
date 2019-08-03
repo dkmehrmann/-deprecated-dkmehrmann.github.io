@@ -35,13 +35,16 @@ layout: page
       <div class='affix'>
         <h4>Table of Contents</h4>
         <ul class="list-unstyled" id="toc"></ul>
+        <hr>
+        <a href="https://twitter.com/intent/tweet?screen_name=andrewmehrmann&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @andrewmehrmann</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
 
   </div>
 
   <div id="content" class="col-xs-12 col-sm-9 pull-right">
 
-      <h1 class="page-header">{{ page.title }}</h1>
+      <h1>{{ page.title }}</h1>
+      <hr>
       <p class="post-meta">
         <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
         {% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
