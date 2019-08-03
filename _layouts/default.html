@@ -17,7 +17,7 @@
     <div class="container">
 
         <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
+          <div class="w-100">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
@@ -35,6 +35,10 @@
                 <li class="nav-item"><a class="nav-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
                 {% endif %}
               {% endfor %}
+              </ul>
+              
+              <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item" style="margin-right:15px"><a class='nav-link' href="/about.html">About</a></li>
               </ul>
             </div>
           </div>

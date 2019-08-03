@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Blog
-navigable: true
+navigable: false
 ---
 
+<!-- This page is deprecated and no longer navigable. It should be sunset soon -->
 
 # Posts
 

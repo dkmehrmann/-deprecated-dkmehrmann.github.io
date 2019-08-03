@@ -4,14 +4,10 @@ title: Home
 navigable: false
 ---
 
-# Hello!
-
-My name is Andrew Mehrmann and I'm a data scientist living in Chicago. In my professional life I sit at the intersection of Data Science and engineering, creating tools and services to bridge the gap between data science and the "real world". These may include platforms for machine learning deployment, interactive applications for exploring data, or web services for delivering insights to customers. My mission is to enable data scientists do great work and see that work through to fruition. You can read more about me [here](/about).
-
-# Recent Posts
+# Latest
 
 <ul class="well">
-  {% for post in site.posts limit:1 %}
+  {% for post in site.posts limit:3 %}
 
       <h2>
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
