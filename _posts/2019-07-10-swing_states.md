@@ -7,7 +7,6 @@ output: html_document
 categories: election ds
 ---
 
-<hr>
 *The [notebook for this analysis](https://colab.research.google.com/drive/1sJ0u1JwRWlSUiaww2BMiDCumfnR6YjZt) will be updated periodically with the most recent results. You can also create a copy or [run it yourself](https://stackoverflow.com/questions/52011084/what-is-playground-mode-in-googles-colaboratory) to get near-real-time updates.*
 <hr>
 
