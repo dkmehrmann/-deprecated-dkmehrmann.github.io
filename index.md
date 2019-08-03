@@ -6,7 +6,9 @@ navigable: false
 
 # Latest
 
-<ul class="well">
+<hr>
+
+<ul style="padding-left:0px;">
   {% for post in site.posts limit:3 %}
 
       <h2>
@@ -14,6 +16,10 @@ navigable: false
       </h2>
 
       <span class="text-warning">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+      {% for category in post.categories %}
+        <a href="/{{category}}" class="btn btn-warning btn-xs">{{category}}</a>
+      {% endfor %}
 
       <p>{{ post.content | strip_html | truncatewords:75}}</p>
 

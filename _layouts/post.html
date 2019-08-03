@@ -40,7 +40,13 @@ layout: default
   <div id="content" class="col-xs-12 col-sm-9 pull-right">
 
       <h1 class="page-header">{{ page.title }}</h1>
-      <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+      <p class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+        {% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %} •
+        {% for category in page.categories %}
+          <a href="/{{category}}" class="btn btn-warning btn-xs">{{category}}</a>
+        {% endfor %}
+      </p>
 
       {{ content }}
 
