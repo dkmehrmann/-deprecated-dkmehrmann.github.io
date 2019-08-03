@@ -2,12 +2,13 @@
 layout: post
 title: "The National Debt and its Derivatives"
 author: "Andrew Mehrmann"
-date: "July 29, 2019"
+date: "August 3, 2019"
 output: html_document
 categories: election ds
 ---
 
-*The [notebook for this analysis](https://colab.research.google.com/drive/14zIpFh00cR6n8BaOB-JxIFd3DRrpFeGZ) is available via Collaboratory. You can also create a copy or [run it yourself](https://stackoverflow.com/questions/52011084/what-is-playground-mode-in-googles-colaboratory)*
+*The [notebook for this analysis](https://colab.research.google.com/drive/14zIpFh00cR6n8BaOB-JxIFd3DRrpFeGZ) is available via Collaboratory. You can also create a copy or [run it yourself](https://stackoverflow.com/questions/52011084/what-is-playground-mode-in-googles-colaboratory)*.
+
 <hr>
 
 I saw a Tweet (via Reddit) recently that caught my eye:
@@ -31,15 +32,15 @@ Morons: “Democrats cause deficits.”</p>&mdash; Alex Cole (@acnewsitics) <a h
 
 <br>
 
-This astounded me. I fact checked him and...he’s right! For the most part, anyway. This got me thinking: Is it possible that there exists *clear evidence* of partisan effects on the Federal Budget Deficit? If true, this would certainly influence how we understand claims from the left and right about the budgetary policies of those across the aisle. Also, is *change in deficit* really the "right way" to think about debt and budgetary issues?
+This astounded me. I fact checked him and...he’s right! [For the most part, anyway.](https://www.politifact.com/truth-o-meter/statements/2019/jul/29/tweets/republican-presidents-democrats-contribute-deficit/) This got me thinking: Is it possible that there exists *clear evidence* of partisan effects on the Federal Budget Deficit? If true, this would certainly influence how we understand claims from the left and right about the budgetary policies of those across the aisle. Also, is *change in deficit* really the "right way" to think about debt and budgetary issues?
 
-Before we begin, I want to be clear that I'm not attacking this Tweet or it's author. On the contrary, I find their assertion intriguing enough to warrant further exploration, and I hope you'll believe me when I say that I have no political motive for doing so. What I want to know are the facts, not the talking points, as I believe truth will lead us to salvation. Of course it's nearly impossible for ones own bias to creep in, so I invite you to dig into the data yourself and let me know what you find.
+Before we begin, I want to be clear that I'm not attacking this Tweet or it's author. On the contrary, I find their assertion intriguing enough to warrant further exploration, and I hope you'll believe me when I say that I have no political motive for doing so. What I want to know are the facts, not the talking points, as I believe truth will lead us to salvation. Of course it's nearly impossible for one's own bias not to creep in, so I invite you to dig into the data yourself and let me know what you find.
 
 I'll start by briefly covering deficits and their relationship to the National Debt.
 
 ## Debt and its Derivatives
 
-A debt, national or otherwise, accumulates as a result of a budget deficit. The Federal Budget consists of Income from taxes and expenditures on things like Defense and Social Security. If you spend more on these programs than you take in from taxes, you'll run a budget deficit.
+A debt, national or otherwise, accumulates as a result of a budget deficit. There are [other ways to add to the debt](https://www.thebalance.com/deficit-by-president-what-budget-deficits-hide-3306151) too, but for the purposes of this article we can safely ignore them. The Federal Budget consists of income from taxes and expenditures on things like defense and Social Security. If you spend more on these programs than you take in from taxes, you'll run a budget deficit, and thereby add to the debt. Let's take a quick look at where the government makes and spends its money.
 
 <p align="center">
   <img src="https://www.mercatus.org/sites/default/files/sourcesoffederal1.jpg">
@@ -50,17 +51,13 @@ A debt, national or otherwise, accumulates as a result of a budget deficit. The 
   <img src=" https://www.mercatus.org/sites/default/files/federalspending1.jpg">
 </p>
 
-When a budget deficit happens, you can either draw on your savings to pay for it or accumulate debt. Drawing on savings can work in the short-term, but once the savings dry up you've now got no emergency fund and the same budgetary problem you started with. There are [other ways to add to the debt](https://www.thebalance.com/deficit-by-president-what-budget-deficits-hide-3306151) too, but for the purposes of this article we can safely ignore them.
-
 I’m not an expert on the nuanced costs and benefits of a government holding debt, but rather would like to start from the premise that a government consistently running over budget and accruing debt without paying it off is not sustainable. If you don't believe me, it should be at least a little concerning that the Federal Government has set up [a website where you can donate to help pay down the national debt](https://www.pay.gov/public/form/start/23779454/).
-
-We hear a lot about the growing National Debt, and there’s even a physical [“Debt Clock”](https://en.wikipedia.org/wiki/National_Debt_Clock) in New York City to highlight its alarmingly fast accrual.
 
 <p align="center">
   <img src="/figs/2019-07-30-federal_deficits/debt.png">
 </p>
 
-Not only is our debt increasing, but the rate at which it is increasing is increasing. This means that the deficit must be increasing year over year. In mathematical terms, you can think of the deficit as the *first derivative* of the debt, and the year over year change in deficit as the *second derivative* of the debt.
+Not only is our debt increasing, but the rate at which it is increasing is increasing. This means that the deficit must be increasing year over year. In mathematical terms, you can think of the deficit as the *first derivative* of the debt, and the year over year change in deficit (Δ Deficit) as the *second derivative* of the debt.
 
 If you're not into math jargon, just understand that debt is the accumulation of deficits, and deficits are the accumulation of changes in the deficit. Mouse over the columns Deficit and Δ Deficit to see how this works - **the yellow cells of a lower order metric add to the green cell.**
 
@@ -147,39 +144,43 @@ $(document).ready(function() {
 
 ## Who can we Blame
 
-What we all really want to know is *who can we blame all this debt on?* In the Tweet above, the author attributes reducing the deficit to Democratic presidents. Or rather, refutes the claim that Democrats *cause* the deficit. But how much can one administration or Congress really change these things, and **how much of the issue is inherited from previous years?** Debt is certainly inherited from administration to administration, but are deficits? Are changes in deficit?
+What we all really want to know is *who can we blame all this debt on?* In the Tweet above, the author attributes reducing the deficit to Democratic presidents. Or rather, refutes the claim that Democrats *cause* the deficit. But how much can one administration or Congress really change these things, and **how much of the issue is inherited from previous years?** Debt is by definition inherited from administration to administration, but are deficits? Are changes in deficit?
 
-Additionally, it's not just the President that influences budget: that's technically Congress's job. This gives way to the point of this analysis: **to understand partisan effects on a federal budget, you need to include House and Senate control, and we need to look at debt and its first and second derivatives.** In what follows, I dig into these topics using data on the federal budget/debt and party control of the House, Senate, and Presidency (see the [appendix](#appendix-the-data) for details).
+Additionally, it's not just the President that influences the budget: that's technically Congress's job. This gives way to the point of this analysis: **to understand partisan effects on a federal budget, you need to include House and Senate control, and we need to look at debt and its first and second derivatives.** In what follows, I dig into these topics using data on the federal budget/debt and party control of the House, Senate, and Presidency over the last 50 years (see the [appendix](#appendix-the-data) for details).
 
 ## Digging into the Data
 
+Before we start, I want to point out that it is not *just* party affiliation that controls how much deficit we run or debt we accumulate; it’s also economic conditions, warfare, etc., so it’s important to note that whatever these numbers say does not indicate a causal relationship between party and debt/deficit.
+
+Note that all figures are adjusted for inflation using 1983 dollars.
+
 ### Debt
 
-Before we start, I want to point out that it is not *just* party affiliation that controls how much deficit we run or debt we accumulate; it’s also economic conditions, warfare, etc., so it’s important to note that whatever these numbers say does not indicate a causal relationship between party and debt/deficit. We can start by taking a look at the National Debt against who was in control of each body of government for the given Fiscal Year.
+We can start by taking a look at the National Debt against who was in control of each body of government for the given Fiscal Year.
 
 <p align="center">
   <img src="/figs/2019-07-30-federal_deficits/debt_by_house.png">
 </p>
 
-Red and Blue indicate Republican and Democrat, respectively, keeping with convention. White bars indicate "split years", or years when power was being handed from one party to another. Note that fiscal years don't exactly line up with election cycles, hence the need for these split years.
+Red and Blue indicate Republican and Democrat, respectively, keeping with convention. White bars indicate "split years", or years when power was being handed from one party to another. Note that fiscal years don't exactly line up with election cycles, hence the existence of these split years.
 
-Almost every year since 1970 has seen the National Debt increase. Such a monotonic pattern doesn't really tell us a good story, and claims that "X President increased the debt" are sort of missing the point, because *almost every president in recent history has increased the debt.*
+Almost every year since 1970 has seen the National Debt increase. Such a monotonic pattern doesn't really tell us a good story, and claims that "X President increased the debt" are sort of missing the point, because *almost every president in recent history has increased the debt.* We know from above that increasing the debt is a result of running a budget deficit, so let's take a look at those figures directly.
 
 ### Deficit
 
-Recall that Debt is the accumulation of deficits, and that a deficit results from government spending more than it takes in. Each fiscal year Congress decides on a new budget, and at the end of that fiscal year we can see how well we adhered to it and how much of a deficit or surplus we ran.
+Recall that a deficit results from government spending more than it takes in. Each fiscal year Congress decides on a new budget, and at the end of that fiscal year we can see how well we adhered to it and how much of a deficit or surplus we ran.
 
 <p align="center">
   <img src="/figs/2019-07-30-federal_deficits/deficit_by_house.png" width="600px">
 </p>
 
-On the left we're looking at deficit by fiscal year, so a high value means we added a lot to the debt and a low value means we added a little or subtracted from the debt. A flat line would mean we’re adding (or subtracting) the same amount to (or from) the debt every year. An increasing trend means we’re to the debt *at an increasing rate*, and decreasing the opposite.
+On the left we're looking at deficit by fiscal year, so a high value means we added a lot to the debt and a low value means we added a little or subtracted from the debt. A flat line would mean we’re adding (or subtracting) the same amount to (or from) the debt every year. An increasing trend means we’re *adding to the debt at an increasing rate*, and decreasing the opposite.
 
 On the right, I've plotted the distribution (specifically a [kernel estimate](https://en.wikipedia.org/wiki/Kernel_density_estimation) of it) of yearly deficits for Republicans and Democrats, ignoring split years. A distribution shifted to the right would indicated higher deficits for that respective party, while a wider distribution would indicate more variance in the size of the yearly deficit for that party.
 
 Right away in the left plot we see the deficit caused by the 08’-09’ financial crisis and subsequent stimulus package. Another thing to note is that the famous "Bill Clinton got the deficit to zero” thing happened with a largely Republican House/Senate. Notice also how the line isn’t very “jagged,” meaning that the deficit in one period might be dependent at least in part on the deficit in the previous period. Indeed, using a metric called [autocorrelation](https://en.wikipedia.org/wiki/Autocorrelation) I find that that **the deficit in one year is positively correlated with the deficit in the previous year.** I've included plots [in an appendix below](#appendix-autocorrelation).
 
-This means that in addition to debt being inherited year-over-year (this is true by definition), **deficits are also inherited year-over-year**. For example, if we run a huge deficit in 2020, it’s likely there will be a large deficit in 2021 as well. Intuitively, the policies of your predecessors still have the be paid for regardless of if you like them or not, so they will be included in your budget (unless you repeal them which is usually tough). I didn't look directly at split years where power was changing hands because there just isn't much data, but that would be a good area of future exploration.
+This means that in addition to debt being inherited year-over-year (this is true by definition), **deficits are also inherited year-over-year**. For example, if we run a huge deficit in 2020, it’s likely that there will be a large deficit in 2021 as well. Intuitively, the policies of your predecessors still have the be paid for regardless of if you like them or not, so they will be included in your budget (unless you repeal them which is usually tough). I didn't look directly at split years where power was changing hands (e.g. do Republican presidents inherit Democratic deficits or vice versa) because there just isn't much data, but that would be a good area of future exploration.
 
 ### Δ Deficit
 
@@ -203,7 +204,7 @@ I’ve shown that **budget deficits are inherited year-over-year** so attributio
 
 While this trend with recent presidents certainly makes for interesting banter, it should not be used to attribute blame for debt accumulation. The President's and Congress’s relationship to deficit through the federal budget is nuanced and attributing any causation would require a similarly sophisticated analysis. Nonetheless my observational analysis shows **no clear evidence that control over the presidency or either house of congress by either major political party has any correlation with the accumulation of national debt.**
 
-I concede that it is hard to square facts like laid out in the Tweet above with my relatively lengthy and technical argument; it is far easier to find things that are simple to explain and support your case. I also concede that (using more gentle language than the author) there is no evidence that Democrats cause deficits, either. I want to be clear that I'm not attacking the Tweet's assertion, but rather adding in the details around it so readers can formulate more informed opinions regarding debt, deficits, and partisan allegiance.
+I concede that it is hard to square facts like laid out in the Tweet above with my relatively lengthy and technical argument; it is far easier to reference things that are simple to explain and support your case. I also concede that (using more gentle language than the author) there is no evidence that Democrats cause deficits, either. I want to be clear that I'm not attacking the Tweet's assertion, but rather adding in the details around it so readers can formulate more informed opinions regarding debt, deficits, and partisan allegiance.
 
 ## Appendix: The Data
 
