@@ -10,6 +10,11 @@ categories: election ds
 *The [notebook for this analysis](https://colab.research.google.com/drive/1sJ0u1JwRWlSUiaww2BMiDCumfnR6YjZt) will be updated periodically with the most recent results. You can also create a copy or [run it yourself](https://stackoverflow.com/questions/52011084/what-is-playground-mode-in-googles-colaboratory) to get near-real-time updates.*
 <hr>
 
+<a class="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/andrewmehrmann/timelines/1158091027573592064?ref_src=twsrc%5Etfw">Swing State General Election Poll Updates - Curated tweets by andrewmehrmann</a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<hr style='margin-top: -30px;'>
+
 ## Background
 
 Keeping with the spirit of [my previous post](/election/2019/07/06/data_politics_do_good.html), I created a simple analysis of polling data that attempts to answer a question voters seem to care about and that I haven't seen answered very well before: *if the Democrats want to beat Donald Trump, who should they choose as their candidate in the Primary?* Voters [perceive](https://fivethirtyeight.com/features/democrats-think-biden-is-electable-but-hes-not-everyones-first-choice/) an establishment democrat as having better chances than a more progressive candidate, and indeed [this is an issue Democratic voters seem to care about](https://fivethirtyeight.com/features/democrats-care-more-about-winning-than-usual/).
