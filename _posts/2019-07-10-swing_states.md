@@ -58,19 +58,42 @@ The point is that each candidate's chances of wining the general election should
 
 ## Analysis
 
-To do this, I used data from [FiveThirtyEight](https://data.fivethirtyeight.com/) to create an **Analysis of the 2020 Democratic Primary Polls in Swing States** ([code and notebook here](https://colab.research.google.com/drive/1sJ0u1JwRWlSUiaww2BMiDCumfnR6YjZt)). It combines recent (from last 8 weeks) polling data to report two things:
+To do this, I used data from [FiveThirtyEight](https://data.fivethirtyeight.com/) to create an **Analysis of the 2020 Democratic Primary Polls in Swing States** ([code and notebook here](https://colab.research.google.com/drive/1sJ0u1JwRWlSUiaww2BMiDCumfnR6YjZt)). It combines recent (from the last 8 weeks) polling data to report two things:
 
 1. each serious Democratic candidate's polling average in each swing state and
-2. a weighted average of the polls the swing states for each candidate
+2. a weighted average of the polls in the swing states for each candidate
 
 Serious Democratic candidates are defined as **Biden**, **Warren**, **Sanders**, and **Harris** (each are polling over 10% on average in the primary polls). Here is the current (as of this writing) polling average for each candidate within each state in a head-to-head matchup with Donald Trump:
 
-<table border="1" class="table">  <thead>    <tr style="text-align: right;">      <th>state</th>      <th>eVotes</th>      <th>popvoteDem16</th>      <th>Biden</th>      <th>Warren</th>      <th>Sanders</th>      <th>Harris</th>    </tr>    </thead>  
+<table border="1" class="table" id="pollsTable">  <thead>    <tr style="text-align: right;">      <th>state</th>      <th>eVotes</th>      <th>popvoteDem16</th>      <th>Biden</th>      <th>Warren</th>      <th>Sanders</th>      <th>Harris</th>    </tr>    </thead>  
 <tbody>    
-<tr>      <th>IA</th>      <td>6</td>      <td>0.449</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    
-<tr>      <th>TX</th>      <td>38</td>      <td>0.453</td>      <td>0.522</td>      <td>0.495</td>      <td>0.484</td>      <td>0.478</td>    </tr>    <tr>      <th>OH</th>      <td>18</td>      <td>0.457</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>GA</th>      <td>16</td>      <td>0.473</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>NC</th>      <td>15</td>      <td>0.481</td>      <td>0.509</td>      <td>0.498</td>      <td>0.525</td>      <td>0.491</td>    </tr>    <tr>      <th>AZ</th>      <td>11</td>      <td>0.481</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>FL</th>      <td>29</td>      <td>0.494</td>      <td>0.513</td>      <td>0.503</td>      <td>0.512</td>      <td>0.491</td>    </tr>    <tr>      <th>WI</th>      <td>10</td>      <td>0.496</td>      <td>0.535</td>      <td>0.500</td>      <td>0.540</td>      <td>NaN</td>    </tr>    <tr>      <th>PA</th>      <td>20</td>      <td>0.496</td>      <td>0.539</td>      <td>0.485</td>      <td>0.517</td>      <td>0.500</td>    </tr>    <tr>      <th>MI</th>      <td>16</td>      <td>0.499</td>      <td>0.545</td>      <td>0.507</td>      <td>0.532</td>      <td>0.518</td>    </tr>    <tr>      <th>NH</th>      <td>4</td>      <td>0.502</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>MN</th>      <td>10</td>      <td>0.508</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>NV</th>      <td>6</td>      <td>0.513</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>ME</th>      <td>4</td>      <td>0.516</td>      <td>0.540</td>      <td>0.520</td>      <td>0.530</td>      <td>0.520</td>    </tr>    <tr>      <th>CO</th>      <td>9</td>      <td>0.527</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>VA</th>      <td>13</td>      <td>0.528</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>    <tr>      <th>NM</th>      <td>5</td>      <td>0.547</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>      <td>NaN</td>    </tr>  </tbody></table>
+<tr>      <th>IA</th>      <td>6</td>      <td>0.449</td>      <td>-</td>      <td>-</td>      <td>-</td>      <td>-</td>    </tr>    
+<tr>      <th>TX</th>      <td>38</td>      <td>0.453</td>      <td>0.522</td>      <td>0.495</td>      <td>0.484</td>      <td>0.478</td>    </tr>    <tr>      <th>OH</th>      <td>18</td>      <td>0.457</td>      <td>-</td>      <td>-</td>      <td>-</td>      <td>-</td>    </tr>    <tr>      <th>GA</th>      <td>16</td>      <td>0.473</td>      <td>-</td>      <td>-</td>      <td>-</td>      <td>-</td>    </tr>    <tr>      <th>NC</th>      <td>15</td>      <td>0.481</td>      <td>0.509</td>      <td>0.498</td>      <td>0.525</td>      <td>0.491</td>    </tr>    <tr>      <th>AZ</th>      <td>11</td>      <td>0.481</td>      <td>-</td>      <td>-</td>      <td>-</td>      <td>-</td>    </tr>    <tr>      <th>FL</th>      <td>29</td>      <td>0.494</td>      <td>0.513</td>      <td>0.503</td>      <td>0.512</td>      <td>0.491</td>    </tr>    <tr>      <th>WI</th>      <td>10</td>      <td>0.496</td>      <td>0.535</td>      <td>0.500</td>      <td>0.540</td>      <td>-</td>    </tr>    <tr>      <th>PA</th>      <td>20</td>      <td>0.496</td>      <td>0.539</td>      <td>0.485</td>      <td>0.517</td>      <td>0.500</td>    </tr>    <tr>      <th>MI</th>      <td>16</td>      <td>0.499</td>      <td>0.545</td>      <td>0.507</td>      <td>0.532</td>      <td>0.518</td>    </tr>    <tr>      <th>NH</th>      <td>4</td>      <td>0.502</td>      <td>-</td>      <td>-</td>      <td>-</td>      <td>-</td>    </tr>    <tr>      <th>MN</th>      <td>10</td>      <td>0.508</td>      <td>-</td>      <td>-</td>      <td>-</td>      <td>-</td>    </tr>    <tr>      <th>NV</th>      <td>6</td>      <td>0.513</td>      <td>-</td>      <td>-</td>      <td>-</td>      <td>-</td>    </tr>    <tr>      <th>ME</th>      <td>4</td>      <td>0.516</td>      <td>0.540</td>      <td>0.520</td>      <td>0.530</td>      <td>0.520</td>    </tr>    <tr>      <th>CO</th>      <td>9</td>      <td>0.527</td>      <td>-</td>      <td>-</td>      <td>-</td>      <td>-</td>    </tr>    <tr>      <th>VA</th>      <td>13</td>      <td>0.528</td>      <td>-</td>      <td>-</td>      <td>-</td>      <td>-</td>    </tr>    <tr>      <th>NM</th>      <td>5</td>      <td>0.547</td>      <td>-</td>      <td>-</td>      <td>-</td>      <td>-</td>    </tr>  </tbody></table>
 
-`eVotes` is the number of electoral votes in each state. `popvoteDem16` is the proportion of the vote relative to Trump that HRC won in each state in 2016. Cells with `NaN` represent state-candidate combinations for which there are no polls (within the last 8 weeks). All figures are reported relative to Trump in the sense that any number above 0.5 would represent a candidate is polling better than Trump in that state (third-party candidates and undecideds are averaged into the Democrat and Trump proportionally).
+<script src="//code.jquery.com/jquery.js"></script>
+<script>
+function rainbow(n) {
+if (n > 0.5){
+	n = 1-n
+	return 'rgb(' + n*510 + ',' + n*510 + ',255)';
+}
+  return 'rgb( 255, ' + n*510 + ',' + n*510  + ')';
+}
+
+$("#pollsTable tr").each(function () {
+
+    $('td', this).each(function () {
+        var value = $(this).text();
+        if (value < 1) {
+        $(this).css('background-color', rainbow(value));
+      }
+
+     })
+
+})
+</script>
+
+`eVotes` is the number of electoral votes in each state. `popvoteDem16` is the proportion of the vote relative to Trump that HRC won in each state in 2016. Cells with `-` represent state-candidate combinations for which there are no polls (within the last 8 weeks). All figures are reported relative to Trump in the sense that any number above 0.5 would represent a candidate is polling better than Trump in that state (third-party candidates and undecideds are averaged into the Democrat and Trump proportionally).
 
 Here is the same data in graphical form:
 
