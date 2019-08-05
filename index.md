@@ -9,10 +9,6 @@ navigable: false
 
 <div class='well'>
 
-<h2>Featured</h2>
-<hr style='border-color:#8e8d8d;'>
-Check out my analysis of the <a href='/election'>2020 Election -></a>
-
 <h2>Latest</h2>
 
 <hr style='border-color:#8e8d8d;'>
@@ -58,5 +54,5 @@ Check out my analysis of the <a href='/election'>2020 Election -></a>
 </div>
 
 <br>
-<a class="twitter-timeline" data-theme="dark" data-height="1000" href="https://twitter.com/andrewmehrmann?ref_src=twsrc%5Etfw">Tweets by andrewmehrmann</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a class="twitter-timeline" data-theme="dark" data-height="900" href="https://twitter.com/andrewmehrmann?ref_src=twsrc%5Etfw">Tweets by andrewmehrmann</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>

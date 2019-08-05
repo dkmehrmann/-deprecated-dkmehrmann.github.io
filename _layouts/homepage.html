@@ -2,27 +2,36 @@
 layout: default
 ---
 
-<div class="jumbotron container-fluid" style='margin-top:-20px; padding:0px; margin-bottom:0px;'>
-    <div class="content">
+<!-- color options: #f0ad4eba, rgb(72, 121, 116);,#428bca52,#c3e5e7, rgb(154, 183, 205);, rgb(209, 220, 191);-->
 
-      <!-- <br>
-      <h1 style='margin-top:0px'>Andrew Mehrmann</h1>
-      <p class="lead">Trying to make data make sense</p>
-      <br> -->
+
+
+<div class="jumbotron container-fluid" style='margin-top:-20px; padding:0px; margin-bottom:0px; background-color:rgb(209, 220, 191);'>
+    <div class="content">
       <svg></svg>
-      <p class='text-left' style='margin-top:0px; font: 30px monospace; text-align:right;'>making data make sense</text>
+      <br>
+      <p class='lead text-left' id='subtitle' style='margin-bottom:10px'>making data make sense</text>
     </div>
 </div>
+
+
 
 <div class='content'>
   {{ content }}
 </div>
 
 
-
-
-
 <style>
+
+#subtitle {
+  font-family: "Courier New";
+   text-align:right;
+   /*font-size: 3vw;*/
+}
+
+@media(min-width:801px){#subtitle{font-size: 150%}}
+@media(max-width:800px){#subtitle{font-size: 3vw}}
+
 .link {
   stroke: #999;
   stroke-opacity: 0.6;
@@ -36,7 +45,7 @@ layout: default
 }
 .node text {
   pointer-events: none;
-  font: 70px sans-serif;
+  font: 80px sans-serif;
 }
 
 </style>
@@ -46,7 +55,7 @@ layout: default
 <script>
 
 var width = 960,
-    height = 200,
+    height = 250,
     radius=20;
 
 var svg = d3.select("svg")
@@ -71,7 +80,6 @@ for (i=0; i<letters.length-1; i++){
   data['nodes'].push({'name':letters[i], 'weight':1})
 }
 data['nodes'].push({'name':letters[letters.length-1], 'weight':1})
-console.log(data)
 
 force
   .nodes(data.nodes)
@@ -104,7 +112,7 @@ node.append("text")
 
 svg.selectAll(".node")
   .attr("transform", function(d) {
-    console.log(d)
+
     if (d.name == "A"){
       d.fixed = true
       d.px = 40
@@ -129,7 +137,7 @@ svg.selectAll(".node")
 force.on("tick", function() {
 
   node.attr("cx", function(d) { return d.x = Math.max(radius, Math.min(width - radius, d.x)); })
-      .attr("cy", function(d) { return d.y = Math.max(radius, Math.min(height - radius-25, d.y)); });
+      .attr("cy", function(d) { return d.y = Math.max(radius+25, Math.min(height - radius-25, d.y)); });
 
   link.attr("x1", function(d) { return d.source.x; })
       .attr("y1", function(d) { return d.source.y; })
