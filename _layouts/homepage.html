@@ -4,10 +4,12 @@ layout: default
 
 <div class="jumbotron container-fluid" style='margin-top:-20px; padding:0px; margin-bottom:0px;'>
     <div class="content">
-      <br>
+
+      <!-- <br>
       <h1 style='margin-top:0px'>Andrew Mehrmann</h1>
       <p class="lead">Trying to make data make sense</p>
-      <br>
+      <br> -->
+      <svg></svg>
 
     </div>
 </div>
@@ -15,3 +17,123 @@ layout: default
 <div class='content'>
   {{ content }}
 </div>
+
+
+
+<style>
+.link {
+  stroke: #999;
+  stroke-opacity: 0.6;
+  stroke-width:1.5px;
+}
+.node circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+  fill:#eee; /*this is what hides the circles */
+
+}
+
+.node text {
+  pointer-events: none;
+  font: 60px sans-serif;
+}
+
+</style>
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+<script>
+
+var width = 960,
+    height = 200,
+    radius=20;
+
+var svg = d3.select("svg")
+//    .attr("width", width)
+//    .attr("height", height);
+  .attr("viewBox", "0 0 " + width + " " + height )
+  .attr("preserveAspectRatio", "xMidYMid meet");
+
+var force = d3.layout.force()
+    .gravity(0.05)
+    .distance(20)
+    .charge(-1000)
+    .size([width, height]);
+
+var str = "Andrew Mehrmann";
+var letters = str.split("");
+data = {'links':[], 'nodes':[]}
+
+for (i=0; i<letters.length-1; i++){
+  data['links'].push({'source':i, 'target': i+1, 'weight':1})
+  data['nodes'].push({'name':letters[i], 'weight':1})
+}
+data['nodes'].push({'name':letters[letters.length-1], 'weight':1})
+console.log(data)
+
+force
+  .nodes(data.nodes)
+  .links(data.links)
+  .start();
+
+var link = svg.selectAll(".link")
+    .data(data.links)
+  .enter().append("line")
+    .attr("class", "link");
+
+var node = svg.selectAll(".node")
+    .data(data.nodes)
+  .enter().append("g")
+    .attr("class", "node")
+    .call(force.drag);
+
+node.append("circle")
+    //.attr("xlink:href", "https://github.com/favicon.ico")
+    .attr("x", -8)
+    .attr("y", -8)
+    .attr("r", radius)
+    .attr("width", 25)
+    .attr("height", 25);
+
+node.append("text")
+    .attr("dx", -25)
+    .attr("dy", ".35em")
+    .text(function(d) { return d.name});
+
+svg.selectAll(".node")
+  .attr("transform", function(d) {
+    console.log(d)
+    if (d.name == "A"){
+      d.fixed = true
+      d.px = 40
+      d.py = 70
+    }
+
+    if (d.name == "M"){
+      d.fixed = true
+      d.px = 470
+      d.py = 130
+    }
+
+    if (d.index == letters.length-1){
+      d.fixed = true
+      d.px = width
+      d.py = 130
+    }
+  });
+
+
+force.on("tick", function() {
+
+  node.attr("cx", function(d) { return d.x = Math.max(radius, Math.min(width - radius, d.x)); })
+      .attr("cy", function(d) { return d.y = Math.max(radius, Math.min(height - radius, d.y)); });
+
+  link.attr("x1", function(d) { return d.source.x; })
+      .attr("y1", function(d) { return d.source.y; })
+      .attr("x2", function(d) { return d.target.x; })
+      .attr("y2", function(d) { return d.target.y; });
+
+  node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+});
+
+</script>
