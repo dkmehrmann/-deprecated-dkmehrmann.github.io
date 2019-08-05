@@ -10,13 +10,15 @@ layout: default
       <p class="lead">Trying to make data make sense</p>
       <br> -->
       <svg></svg>
-
+      <p class='text-left' style='margin-top:0px; font: 30px monospace; text-align:right;'>making data make sense</text>
     </div>
 </div>
 
 <div class='content'>
   {{ content }}
 </div>
+
+
 
 
 
@@ -32,10 +34,9 @@ layout: default
   fill:#eee; /*this is what hides the circles */
 
 }
-
 .node text {
   pointer-events: none;
-  font: 60px sans-serif;
+  font: 70px sans-serif;
 }
 
 </style>
@@ -52,7 +53,8 @@ var svg = d3.select("svg")
 //    .attr("width", width)
 //    .attr("height", height);
   .attr("viewBox", "0 0 " + width + " " + height )
-  .attr("preserveAspectRatio", "xMidYMid meet");
+  .attr("preserveAspectRatio", "xMidYMid meet")
+  .attr("margin-botom", "0px");
 
 var force = d3.layout.force()
     .gravity(0.05)
@@ -106,27 +108,28 @@ svg.selectAll(".node")
     if (d.name == "A"){
       d.fixed = true
       d.px = 40
-      d.py = 70
+      d.py = height/2
     }
 
     if (d.name == "M"){
       d.fixed = true
-      d.px = 470
-      d.py = 130
+      d.px = width/2-20
+      d.py = height/2
     }
 
     if (d.index == letters.length-1){
       d.fixed = true
       d.px = width
-      d.py = 130
+      d.py = height/2
     }
   });
 
+//svg.append('text').attr('x', 0).attr("y", height).text('Making data make sense')
 
 force.on("tick", function() {
 
   node.attr("cx", function(d) { return d.x = Math.max(radius, Math.min(width - radius, d.x)); })
-      .attr("cy", function(d) { return d.y = Math.max(radius, Math.min(height - radius, d.y)); });
+      .attr("cy", function(d) { return d.y = Math.max(radius, Math.min(height - radius-25, d.y)); });
 
   link.attr("x1", function(d) { return d.source.x; })
       .attr("y1", function(d) { return d.source.y; })
