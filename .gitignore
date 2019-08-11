@@ -4,3 +4,5 @@ _site
 .Rhistory
 .RData
 knit_script.Rout
+.DS_Store
+.idea
