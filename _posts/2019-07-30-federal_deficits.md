@@ -4,7 +4,7 @@ title: "The National Debt and its Derivatives"
 author: "Andrew Mehrmann"
 date: "August 3, 2019"
 output: html_document
-categories: election ds
+tags: election ds
 ---
 
 *The [notebook for this analysis](https://colab.research.google.com/drive/14zIpFh00cR6n8BaOB-JxIFd3DRrpFeGZ) is available via Collaboratory. You can also create a copy or [run it yourself](https://stackoverflow.com/questions/52011084/what-is-playground-mode-in-googles-colaboratory)*.

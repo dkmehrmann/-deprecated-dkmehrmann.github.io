@@ -4,7 +4,7 @@ title: "The Secretary Problem"
 author: "Andrew Mehrmann"
 date: "August 3, 2016"
 output: html_document
-category: ds
+tags: ds
 ---
 
 Finding an apartment is tough, especially in a big city. As a fan of economics, I often think of situations like this in terms of the decisions, alternatives, and preferences we face. An economist might attempt to quantify our preferences by asking questions like *How important is an extra bathroom to you?* or *How strong is your aversion to busy streets?*. While it might be tough to get reliable quantitative estimates of our preferences, its probably far easier for us to compare apartments to one another and decide which ones we like better than others. This could go on for all pairwise combinations of apartments we are considering until we have ranked each apartment in the set. Naturally, the utility-maximizing decision would be to choose our top-ranked apartment and live happily ever after. Unfortunately it doesn't quite work like that in Chicago, as apartments go on and off the market very, very quickly. If you're lucky enough to schedule a showing, you'd better believe there will be other showings to people ready to seal the deal in the near future. You have to act quickly if you want to land a place, but how do you know if you're getting the best deal out of all your options without knowing what you might see in the future?
@@ -20,7 +20,7 @@ For our apartment search, we can think of the *interviews* or *dates* from above
 
 ## Numerical Simulation
 
-Ok, so the question we need to answer is what stopping rule maximizes the probability of selecting the best alternative or candidate. We can try a few out, and I'll set up the code so that you can write in your own logic and test your own stopping rules. This is a good time to let you know that this will be as much a coding demonstration as an illustration of optimal stopping theory. I'm an R programmer, not a mathematician, but I find this topic really, really cool. 
+Ok, so the question we need to answer is what stopping rule maximizes the probability of selecting the best alternative or candidate. We can try a few out, and I'll set up the code so that you can write in your own logic and test your own stopping rules. This is a good time to let you know that this will be as much a coding demonstration as an illustration of optimal stopping theory. I'm an R programmer, not a mathematician, but I find this topic really, really cool.
 
 #### The set of candidates
 
@@ -33,7 +33,7 @@ library(ggplot2)
 make_shuffle_candidates <- function(n) return(sample(1:n))
 {% endhighlight %}
 
-We're going to assume that the candidates come to us in purely random order. This simplifies the math a little bit, but it is an assumption to bear in mind when applying this to the real world. 
+We're going to assume that the candidates come to us in purely random order. This simplifies the math a little bit, but it is an assumption to bear in mind when applying this to the real world.
 
 #### Simulation Framework
 
@@ -81,10 +81,10 @@ The output of this run of the experiment was 12. That means our stopping rule se
 analyze <- function(which_best){
   pbest <<- (table(which_best)/length(which_best))[1]
   exp_rank <<- mean(which_best)
-  
-  p <- ggplot(data.frame(x=which_best), aes(x=x, y=..prop..)) + 
-              geom_bar(color='darkblue', fill='lightblue') + 
-              labs(title="Rank of Candidate Selected - 100,000 Replications", 
+
+  p <- ggplot(data.frame(x=which_best), aes(x=x, y=..prop..)) +
+              geom_bar(color='darkblue', fill='lightblue') +
+              labs(title="Rank of Candidate Selected - 100,000 Replications",
                    x='Rank', y='Density')
   print(p)
 }
@@ -98,7 +98,7 @@ analyze(which_best)
 
 ![center](/figs/2016-08-03-secretary/unnamed-chunk-5-1.png)
 
-This plot shows the *rank of the candidate selected by our stopping rule*. Ideally our stopping rule would choose the highly-ranked canidates more often than the others. That said, we didn't do very good, but that's to be expected. We can use this as our baseline stopping rule, or the one we aim to try to beat. 
+This plot shows the *rank of the candidate selected by our stopping rule*. Ideally our stopping rule would choose the highly-ranked canidates more often than the others. That said, we didn't do very good, but that's to be expected. We can use this as our baseline stopping rule, or the one we aim to try to beat.
 
 We can consider this stopping rule beaten if one or both of the following happen:
 
@@ -154,7 +154,7 @@ optimal <- function(x){
   best_first <- min(first)
   which_better <- which(cands < best_first)         
   choice <- cands[which_better[1]]                  
-  if (is.na(choice)) choice <- cands[length(cands)] 
+  if (is.na(choice)) choice <- cands[length(cands)]
   return(choice)
 }
 
@@ -166,11 +166,11 @@ analyze(which_best)
 ![center](/figs/2016-08-03-secretary/unnamed-chunk-7-1.png)
 
 
-Using the optimal strategy the *Expected Rank* is 4.65275 and the probability of selecting the optimal is 0.37878. This is right in line with the theory, at least for this $n$. To be perfectly clear, this theory is implying that skipping the first 37% of candidates simply to gather information gives you the best chance of selecting the best candidate. The assumptions here are important: the candidates come to you in random order, you have no way to tell how much better one candidate is than the other, and you have no information a priori about the candidates. 
+Using the optimal strategy the *Expected Rank* is 4.65275 and the probability of selecting the optimal is 0.37878. This is right in line with the theory, at least for this $n$. To be perfectly clear, this theory is implying that skipping the first 37% of candidates simply to gather information gives you the best chance of selecting the best candidate. The assumptions here are important: the candidates come to you in random order, you have no way to tell how much better one candidate is than the other, and you have no information a priori about the candidates.
 
 ## Finding an Optimum Numerically
 
-Until now, we have only discussed an optimum in terms of maximizing the probability of selecting the best candidate. What if we wanted to maximize our expected outcome? That is, how can we ensure that we select candidates with low rank on average? Suppose that under the same discard-$m$ framework, we wish to find some cutoff $r$ that minimizes the expected rank of our selected candidate. We're decent R programmers and terrible mathematicians, so we'll solve it via simulation. Along the way, we can also calculate the probability of selecting the best candidate so we'll report both pieces of information. 
+Until now, we have only discussed an optimum in terms of maximizing the probability of selecting the best candidate. What if we wanted to maximize our expected outcome? That is, how can we ensure that we select candidates with low rank on average? Suppose that under the same discard-$m$ framework, we wish to find some cutoff $r$ that minimizes the expected rank of our selected candidate. We're decent R programmers and terrible mathematicians, so we'll solve it via simulation. Along the way, we can also calculate the probability of selecting the best candidate so we'll report both pieces of information.
 
 
 {% highlight r %}
@@ -182,17 +182,17 @@ find_best <- function(x, cutoff){
   best_first <- min(first)
   which_better <- which(cands < best_first)         
   choice <- cands[which_better[1]]                  
-  if (is.na(choice)) choice <- cands[length(cands)] 
+  if (is.na(choice)) choice <- cands[length(cands)]
   return(choice)
 }
 
 # run a simulation for some cutoff and return prob. of selecting the best and exp. rank
 run_one <- function(cutoff, n_cand){
   which_best <- replicate(10000, do_sim(n_cand=n_cand, stopping_rule=find_best, cutoff))
-  
+
   pbest <- (table(which_best)/length(which_best))[1]
   exp_rank <- mean(which_best)
-  
+
   return(list(pbest=pbest, exp_rank=exp_rank))
 }
 
@@ -205,10 +205,10 @@ colnames(df) <- c('pbest', 'exp_rank')
 df$Proportion_Discarded <- seq(0,1, by=0.01)
 
 # plot the results
-p1 <- ggplot(df, aes(x=Proportion_Discarded, y=pbest)) + 
+p1 <- ggplot(df, aes(x=Proportion_Discarded, y=pbest)) +
         geom_line() + labs(x='Proportion Discarded', y='Probability',
                            title='Probability of Selecting the Best Candidate')
-p2 <- ggplot(df, aes(x=Proportion_Discarded, y=exp_rank)) + 
+p2 <- ggplot(df, aes(x=Proportion_Discarded, y=exp_rank)) +
         geom_line() + labs(x='Proportion Discarded', y='Expected Rank',
                            title='Expected (or average) Rank')
 grid.arrange(p1, p2, ncol=2)
@@ -227,10 +227,10 @@ colnames(df) <- c('pbest', 'exp_rank')
 df$Proportion_Discarded <- seq(0,1, by=0.01)
 
 # plot the results
-p1 <- ggplot(df, aes(x=Proportion_Discarded, y=pbest)) + 
+p1 <- ggplot(df, aes(x=Proportion_Discarded, y=pbest)) +
         geom_line() + labs(x='Proportion Discarded', y='Probability',
                            title='Probability of Selecting the Best Candidate')
-p2 <- ggplot(df, aes(x=Proportion_Discarded, y=exp_rank)) + 
+p2 <- ggplot(df, aes(x=Proportion_Discarded, y=exp_rank)) +
         geom_line() + labs(x='Proportion Discarded', y='Expected Rank',
                            title='Expected (or average) Rank')
 grid.arrange(p1, p2, ncol=2)
@@ -263,11 +263,11 @@ discard_r <- function(x,r){
   best_first <- min(first)
   which_better <- which(cands < best_first)         
   choice <- cands[which_better[1]]                  
-  if (is.na(choice)) choice <- cands[length(cands)] 
+  if (is.na(choice)) choice <- cands[length(cands)]
   return(choice)
 }
 
-which_best <- replicate(100000, do_sim(n_cand=rnorm(n=1, mean = 20, sd=4), 
+which_best <- replicate(100000, do_sim(n_cand=rnorm(n=1, mean = 20, sd=4),
                                        stopping_rule=discard_r, 7))
 
 analyze(which_best)
