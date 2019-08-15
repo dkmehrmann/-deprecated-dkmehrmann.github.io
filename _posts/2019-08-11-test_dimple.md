@@ -7,14 +7,16 @@ output: html_document
 categories: election ds
 ---
 
-This type of graphic uses data from the `/data` directory. I can simply update the data in that directory in order to update the graphic (instead of hosting the data elsewhere or relying on inline data).
+Notebook to pull data is [here](https://colab.research.google.com/drive/1c3A8Zv98SD94QyEF-mwQ7EPzVzGCaSjo). Data can be updated by replacing the file in the `/data` directory.
+
+Original Article: https://fivethirtyeight.com/features/where-are-candidates-spending-all-their-time/
 
 
-
-<div id="chartContainer">
+<div id="chartContainer"></div>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+
 <script type="text/javascript">
   var myChart;
   var svg = dimple.newSvg("#chartContainer", "100%", 450);
@@ -28,10 +30,6 @@ This type of graphic uses data from the `/data` directory. I can simply update t
     myChart.draw();
   });
   window.onresize = function () {
-    // As of 1.1.0 the second parameter here allows you to draw
-    // without reprocessing data.  This saves a lot on performance
-    // when you know the data won't have changed.
     myChart.draw(0, true);
 };
 </script>
-</div>
