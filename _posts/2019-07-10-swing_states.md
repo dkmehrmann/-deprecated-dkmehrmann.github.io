@@ -4,7 +4,7 @@ title: "Analysis of the 2020 Democratic Primary Polls in Swing States"
 author: "Andrew Mehrmann"
 date: "July 10, 2019"
 output: html_document
-tags: election ds
+tags: election
 ---
 
 *The [notebook for this analysis](https://colab.research.google.com/drive/1sJ0u1JwRWlSUiaww2BMiDCumfnR6YjZt) will be updated periodically with the most recent results. You can also create a copy or [run it yourself](https://stackoverflow.com/questions/52011084/what-is-playground-mode-in-googles-colaboratory) to get near-real-time updates.*

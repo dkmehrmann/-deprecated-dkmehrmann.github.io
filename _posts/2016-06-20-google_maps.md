@@ -3,7 +3,7 @@ layout: post
 date: Jun 20, 2016
 title: "Intro to the Google Maps API"
 author: Andrew Mehrmann
-tags: programming
+tags: technical
 ---
 
 I became interested in the Google Maps API shortly before Google Maps came out

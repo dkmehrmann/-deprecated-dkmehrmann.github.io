@@ -3,7 +3,7 @@ layout: post
 title:  "Hello World!"
 date:   2016-03-19 16:57:20 -0500
 author: Andrew Mehrmann
-tags: programming
+tags: technical
 ---
 
 Welcome to my blog! With my first post I would like to share a few things I've learned through creating this webpage and [another](ui-datascience.github.io) with GitHub Pages and Jekyll. I've learned a lot through this process and I'm always impressed with how much information is available through StackExchange and similar sites when learning a new skill. I was, however, kinda bummed by the lack of tutorial-type information about customizing a Jekyll/GitHub site. There are lots of tutorials for getting started (below), and the [Jekyll Docs](https://jekyllrb.com/docs/home/) are extremely thorough, but middle ground (i.e. how do I change the background color?) was a little difficult to find.
