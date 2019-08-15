@@ -43,16 +43,12 @@ layout: page
 
   <div id="content" class="col-xs-12 col-sm-9 pull-right">
 
-      <h1>{{ page.title }}</h1>
+      {% assign post = page %}
+
+      <h1>{{ post.title }}</h1>
       <hr>
-      <p class="post-meta">
-        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
-        {% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
-        <br>
-        {% for category in page.categories %}
-          <a href="/{{category}}" class="btn btn-warning btn-xs" style='margin-top:8px;'>{{category}}</a>
-        {% endfor %}
-      </p>
+
+      {% include post-meta.html %}
 
       {{ content }}
 
