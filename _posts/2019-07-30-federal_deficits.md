@@ -16,7 +16,7 @@ I saw a Tweet (via Reddit) recently that caught my eye:
 <br>
 
 <center>
-<blockquote class="twitter-tweet" data-lang="en">
+<blockquote class="twitter-tweet" data-lang="en" data-theme="dark">
 <p lang="en" dir="ltr">
 Reagan took the deficit from 70 billion to 175 billion.
 Bush 41 took it to 300 billion.
@@ -115,7 +115,7 @@ th { white-space:pre }
 </table>
 </center>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
 
 <script>
 $(document).ready(function() {
