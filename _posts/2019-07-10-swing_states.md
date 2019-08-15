@@ -4,7 +4,7 @@ title: "Analysis of the 2020 Democratic Primary Polls in Swing States"
 author: "Andrew Mehrmann"
 date: "July 10, 2019"
 output: html_document
-categories: election ds
+tags: election
 ---
 
 *The [notebook for this analysis](https://colab.research.google.com/drive/1sJ0u1JwRWlSUiaww2BMiDCumfnR6YjZt) will be updated periodically with the most recent results. You can also create a copy or [run it yourself](https://stackoverflow.com/questions/52011084/what-is-playground-mode-in-googles-colaboratory) to get near-real-time updates.*
@@ -17,7 +17,7 @@ categories: election ds
 
 ## Background
 
-Keeping with the spirit of [my previous post](/election/2019/07/06/data_politics_do_good.html), I created a simple analysis of polling data that attempts to answer a question voters seem to care about and that I haven't seen answered very well before: *if the Democrats want to beat Donald Trump, who should they choose as their candidate in the Primary?* Voters [perceive](https://fivethirtyeight.com/features/democrats-think-biden-is-electable-but-hes-not-everyones-first-choice/) an establishment democrat as having better chances than a more progressive candidate, and indeed [this is an issue Democratic voters seem to care about](https://fivethirtyeight.com/features/democrats-care-more-about-winning-than-usual/).
+Keeping with the spirit of [my previous post](/2019/07/06/data_politics_do_good.html), I created a simple analysis of polling data that attempts to answer a question voters seem to care about and that I haven't seen answered very well before: *if the Democrats want to beat Donald Trump, who should they choose as their candidate in the Primary?* Voters [perceive](https://fivethirtyeight.com/features/democrats-think-biden-is-electable-but-hes-not-everyones-first-choice/) an establishment democrat as having better chances than a more progressive candidate, and indeed [this is an issue Democratic voters seem to care about](https://fivethirtyeight.com/features/democrats-care-more-about-winning-than-usual/).
 
 To see which current Democratic contender has the best odds at beating Trump, one might be tempted to look at one of the numerous national-level polls that pit each candidate against the incumbent president. These polls ask a set of questions that look like this:
 
