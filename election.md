@@ -5,4 +5,4 @@ navigable: true
 mytag: 'election'
 ---
 
-<i>Analyses of the 2020 Presidential Election.</i>
+<i>Analysis of the 2020 Presidential Election.</i>
