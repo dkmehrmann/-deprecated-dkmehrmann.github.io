@@ -6,7 +6,7 @@ date: "July 26, 2016"
 tags: technical
 ---
 
-I went through a bit of trouble to produce [my last post](/blog/2016/06/20/google_maps.html) which used a Jupyter Notebook to demonstrate the Google Maps API and its corresponding [Python client](https://github.com/googlemaps/google-maps-services-python). I've been interested in using Jupyter Notebooks on this site for quite some time and for some reason never took the time to truly investigate how this might be done. It turns out that some really handy folks have already done the hard parts and I'd like to use this post to document how I got their solution to work for me.  
+I went through a bit of trouble to produce [my last post](/2016/06/20/google_maps.html) which used a Jupyter Notebook to demonstrate the Google Maps API and its corresponding [Python client](https://github.com/googlemaps/google-maps-services-python). I've been interested in using Jupyter Notebooks on this site for quite some time and for some reason never took the time to truly investigate how this might be done. It turns out that some really handy folks have already done the hard parts and I'd like to use this post to document how I got their solution to work for me.  
 
 [This article](http://christop.club/2014/02/21/blogging-with-ipython-and-jekyll/) explains how to perform the conversion from `.ipynb` format to Jekyll-ready format. I started from the [reworked version](https://gist.github.com/tgarc/7d6901858ef708030c19#file-example_usage) by Tomas Garcia, but I really wanted a more streamlined approach that didn't involve manually moving files around or editing the YAML by hand (i.e. adding a title and the date).
 
