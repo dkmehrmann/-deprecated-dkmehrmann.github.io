@@ -1,5 +1,5 @@
 <span class="text-warning">{{ post.date | date: "%b %-d, %Y" }}</span> •
-<span class="text-warning">{{ post.content | number_of_words | divided_by: 200 | append: " minute read" }}</span>
+<span class="text-warning"><i>{{ post.content | number_of_words | divided_by: 200 | append: " minute read" }}</i></span>
 <br>
 
 {% for tag in post.tags %}
