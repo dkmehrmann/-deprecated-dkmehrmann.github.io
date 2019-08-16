@@ -5,6 +5,7 @@ author: "Andrew Mehrmann"
 date: "August 11, 2019"
 output: html_document
 categories: election ds
+tags: election
 ---
 
 Notebook to pull data is [here](https://colab.research.google.com/drive/1c3A8Zv98SD94QyEF-mwQ7EPzVzGCaSjo). Data can be updated by replacing the file in the `/data` directory.
