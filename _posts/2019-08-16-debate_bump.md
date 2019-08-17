@@ -12,7 +12,7 @@ Notebook to pull data is [here](https://colab.research.google.com/drive/1ER_FOn1
 
 Uses data from electionbettingodds.com.
 
-
+Talk about the betting markets and how they give a faster look at how a candidate is performing than polls. I haven't tested how fast the markets respond, but if we're looking for a "debate bump" we can at least get more precise with betting markets than polls.
 
 <div id="chartContainer"></div>
 

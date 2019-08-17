@@ -5,13 +5,14 @@ author: "Andrew Mehrmann"
 date: "August 11, 2019"
 output: html_document
 categories: election ds
-tags: election
+tags: technical
 ---
 
 Notebook to pull data is [here](https://colab.research.google.com/drive/1c3A8Zv98SD94QyEF-mwQ7EPzVzGCaSjo). Data can be updated by replacing the file in the `/data` directory.
 
 Original Article: https://fivethirtyeight.com/features/where-are-candidates-spending-all-their-time/
 
+(maybe this article talks about data viz concepts like x/y/size and how visualizing the data like this is better IMO. I think it goes in the technical section.)
 
 <div id="chartContainer"></div>
 
