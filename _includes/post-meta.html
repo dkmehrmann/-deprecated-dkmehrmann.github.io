@@ -1,0 +1,7 @@
+<span class="text-warning">{{ post.date | date: "%b %-d, %Y" }}</span> •
+<span class="text-warning"><i>{{ post.content | number_of_words | divided_by: 200 | append: " minute read" }}</i></span>
+<br>
+
+{% for tag in post.tags %}
+  <a href="/{{tag}}" class="btn btn-warning btn-xs" style='margin-top:8px; margin-bottom:8px;'>{{tag}}</a>
+{% endfor %}

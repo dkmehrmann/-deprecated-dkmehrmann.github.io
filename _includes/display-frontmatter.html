@@ -1,0 +1,9 @@
+<!-- category.html and index.html -->
+<h2>
+  <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+</h2>
+
+  {% include post-meta.html %}
+
+<p>{{ post.content | strip_html | truncatewords:75}}</p>
+<a href="{{ post.url | prepend: site.baseurl }}">Read more...</a><br>
