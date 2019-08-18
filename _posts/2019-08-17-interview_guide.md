@@ -4,7 +4,6 @@ title: "Data Science Interview Guide"
 author: "Andrew Mehrmann"
 date: "August 17, 2019"
 output: html_document
-categories: ds
 tags: technical
 ---
 
