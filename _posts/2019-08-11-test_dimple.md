@@ -4,7 +4,6 @@ title: "Test Dimple Post"
 author: "Andrew Mehrmann"
 date: "August 11, 2019"
 output: html_document
-categories: election ds
 tags: technical
 ---
 

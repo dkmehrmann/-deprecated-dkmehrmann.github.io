@@ -4,7 +4,6 @@ title: "Debate Bump"
 author: "Andrew Mehrmann"
 date: "August 16, 2019"
 output: html_document
-categories: election ds
 tags: election
 ---
 
