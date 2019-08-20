@@ -2,7 +2,7 @@
 layout: post
 title: "Debate Bump"
 author: "Andrew Mehrmann"
-date: "August 16, 2019"
+date: "September 1, 2019"
 output: html_document
 tags: election
 ---

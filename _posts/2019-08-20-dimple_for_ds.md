@@ -2,7 +2,7 @@
 layout: post
 title: "Dimple: Javascript for Data Scientists"
 author: "Andrew Mehrmann"
-date: "August 11, 2019"
+date: "August 20, 2019"
 output: html_document
 tags: technical
 ---
@@ -74,7 +74,7 @@ d3.select('#chartContainer')
   .style('margin-left', '50px');
 d3.select('#chartContainer')
   .append("p")
-  .text("Share of Time Spent Campaigning in the Early States")
+  .text("Share of Time Spent Campaigning in the Early States Through July 31")
   .style('margin-left', '50px');
 
   var myChart;
@@ -122,7 +122,7 @@ d3.select('#chartContainer')
   .style('margin-left', '50px');
 d3.select('#chartContainer')
   .append("p")
-  .text("Share of Time Spent Campaigning in the Early States")
+  .text("Share of Time Spent Campaigning in the Early States Through July 31")
   .style('margin-left', '50px');
 
   var myChart;
