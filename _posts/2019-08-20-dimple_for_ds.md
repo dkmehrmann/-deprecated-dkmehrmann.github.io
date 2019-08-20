@@ -65,7 +65,7 @@ The actual HTML and JS code looks relatively straightforward:
 <div id="chartContainer"></div>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"></script>
 
 <script type="text/javascript">
 d3.select('#chartContainer')
@@ -113,7 +113,7 @@ While Javascript can be difficult to learn, higher-level abstractions like D3 an
 
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"></script>
 
 <script type="text/javascript">
 d3.select('#chartContainer')
