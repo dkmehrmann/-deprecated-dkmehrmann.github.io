@@ -69,11 +69,16 @@ Notebook to pull data and generate plots is [here](https://colab.research.google
 ## Appendix: Background
 
 * https://electionbettingodds.com/about.html
-* 
 
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.1.6/dimple.latest.min.js"></script>
+
+<style>
+.dimple-tooltip-dropline {
+  stroke-width:0 !important;
+}
+</style>
 
 <script type="text/javascript">
   var svg = dimple.newSvg("#chartContainer", "100%", 450);
