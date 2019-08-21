@@ -1,46 +1,46 @@
 ---
 layout: post
-title: "Electoral Betting Markets"
+title: "Betting on Red (or Blue)"
 author: "Andrew Mehrmann"
 date: "August 21, 2019"
 output: html_document
 tags: election
 ---
 
+## Preface: Debate Bumps
+
+Did you know that you can bet on the outcome of the US Election? How much do you think each candidate would be willing to bet on themselves winning the Presidency? Wouldn't politics be more fun and honest if everybody put their money where their mouth is?
+
+I used [aggregate data from a popular prediction market](https://electionbettingodds.com), where people can bet on things like "who will be the Democratic nominee for President of the United States," to look at how each candidate's chance of winning the nomination changed between the day before and the day after each debate. Note that candidates with higher probabilities have a larger opportunity to move around in the probability space, so larger movements don't necessarily mean better or worse debate performances.
+
 <div id="chartContainer"></div>
 
-I used [aggregate data from a popular prediction market](https://electionbettingodds.com) to look at how each candidate's chance of winning the Democratic nomination changed between the day before and the day after each debate. Note that candidates with higher probabilities have a larger opportunity to move around in the probability space, so larger movements don't necessarily mean better or worse debate performances.
+These debate bumps [are usually temporary](https://edition.cnn.com/2019/08/15/politics/debate-bumps-polling/index.html), but can provide insight to a campaign as to how their candidate is performing or which strategies are or aren't effective. Using data from prediction markets in addition to public opinion polls can supplement our understanding of the relationship between cause (strong or weak debate performance) and effect (change in public opinion).
 
-This graphic is made using [Dimple.js](http://dimplejs.org/). If you'd like to learn more about using Dimple, see [my previous post](/2019/08/20/dimple_for_ds.html).
-
-Keep reading to learn more about prediction markets and how they relate to elections!
+This graphic is made using [Dimple.js](http://dimplejs.org/). If you'd like to learn more about using Dimple, see [my previous post](/2019/08/20/dimple_for_ds.html). Keep reading to learn more about prediction markets and how they relate to elections!
 
 <hr>
 
 ## Prediction Markets
 
-Did you know that you can bet on the outcome of the US Election? How much do you think each candidate would be willing to bet on themselves winning the Presidency? Wouldn't politics be more fun and honest if everybody put their money where their mouth is?
+[Prediction markets](https://en.wikipedia.org/wiki/Prediction_market) make it possible to bet directly on the outcome of virtually any event. If you head to [PredictIt](https://www.predictit.org/markets/1/US-Elections) right now, you can buy a share of Donald Trump winning the 2020 election for \\$0.44. If he wins, you'd make \\$1 per share.
+If you buy a share, and the true probability of him winning is exactly 44%, you'd be expected to come out even (44% chance of winning a \\$1 is an expected revenue of \\$0.44, exactly what you spent on the share).
 
-From kitchen tables to smokey basements, how you bet tells us a lot about what you believe, perhaps even more than what you say or even think you believe. When applied to politics, how people bet inherently tells us what they believe, not what they want us to think they believe, because there is now a direct cost to lying or misleading.
+If you believe the probability is higher than 44%, say 50%, you would also believe that your expected revenue is \\$0.50, so you'd expect to profit \\$0.06 off of every share. If you're rational (and confident), you would find lots of these types of advantages, place many bets, and on average you'd come out a very rich person!
 
-[Prediction markets](https://en.wikipedia.org/wiki/Prediction_market) make it possible to bet directly on the outcome of virtually any event. If you head to [PredictIt](https://www.predictit.org/markets/1/US-Elections) right now, you can buy a share of Donald Trump winning the 2020 election for $0.44. If he wins, you'd make $1 per share.
-If you buy a share, and the true probability of him winning is exactly 44%, you'd be expected to come out even (44% chance of winning a $1 is an expected revenue of $0.44, exactly what you spent on the share).
+The fascinating thing about prediction markets is that you are buying and selling shares with other bettors, just like a stock market. And just like a stock market, your demand for shares (based on your belief that Trump has a higher likelihood of winning than 44%) would eventually raise the price level to a new equilibrium if you had enough capital (and guts) to keep buying shares until the marginal profit of each additional share was 0, or the point at which the price of a share was \\$0.50.
 
-If you believe the probability is higher than 44%, say 50%, you would also believe that your expected revenue is $0.50, so you'd expect to profit $0.06 off of every share. The fascinating thing about prediction markets is that you are buying and selling shares with other bettors, just like a stock market. And just like a stock market, your demand for shares (based on your belief that Trump has a higher likelihood of winning than 44%) would eventually raise the price level to a new equilibrium if you had enough capital (and guts) to keep buying shares until the marginal profit of each additional share was 0, or the point at which the price of a share was $0.50.
+In reality, it's not one person but many people who buy and sell these shares until an equilibrium is reached. In this sense, **prices in prediction markets reflect the aggregate belief of the probability of an event or outcome.** Pretty neat!
 
-In this sense, an efficient market means that the price corresponds to the probability of that event happening. Since prediction markets reflect the aggregate belief of those engaged with the market, they represent a pretty decent prediction of the likelihood of an event occuring.
+## Markets vs. Polls
 
-## Betting on Red/Blue
+Prediction markets can give much the same information that public opinion polls can give, namely which candidate is most likely to win an election or nomination. Prediction markets, when operating efficiently, offer two key benefits over public opinion polls: they **respond quickly to new information,** and they give **probabilistic predictions.**
 
-Prediction markets have been [shown empirically](http://researchdmr.com/RothschildPOQ2009.pdf) to be more predictive than polls in US elections. When compared to a predictive model like [the one employed at FiveThirtyEight](https://fivethirtyeight.com/features/a-users-guide-to-fivethirtyeights-2016-general-election-forecast/) they perform slightly worse (but could be adjusted to perform better, according to the author above).
+Polls often take days to reflect new information and require statistical maneuvering to give probabilistic predictions. What's more is that prediction markets have been [shown empirically](http://researchdmr.com/RothschildPOQ2009.pdf) to be more predictive than polls in US elections. When compared to a predictive model like [the one employed at FiveThirtyEight](https://fivethirtyeight.com/features/a-users-guide-to-fivethirtyeights-2016-general-election-forecast/) (that is largely based on polls), they perform slightly worse (but could be adjusted to perform better, according to the author cited above). With the amount of press that polls and models get, it's surprising to me that there is no similar coverage of the prediction markets.
 
-Prediction markets, when operating efficiently, offer two key benefits over polls: they **respond quickly to new information,** and they give **probabilistic predictions.** Polls often take days to reflect new information and require statistical maneuvering to give probabilistic predictions. With the amount of press that polls get, it's surprising to me that there is no similar coverage of the prediction markets.
+The *relationship* between prediction markets and polls is a tricky one. On the one hand, we expect polls to influence the prediction markets, as each new poll gives the bettors new information on the chances of each candidate winning. But the prediction market can also price in information quicker than polls, so there might also exist a lagged correlation in the other direction. You can even [bet on how a candidate will poll in the future](https://www.predictit.org/markets/detail/5740/What-will-Yang's-RCP-average-support-be-at-end-of-day-August-31), offering us the ability (or the illusion of the ability) to predict where polls are headed.
 
-An example of where prediction markets are especially useful is in monitoring debate performances. [The chart above](#chartContainer) demonstrates how one prediction market reacted to the first two debates within a day of their conclusion. These debate bumps [are usually temporary](https://edition.cnn.com/2019/08/15/politics/debate-bumps-polling/index.html), but can provide insight to a campaign as to how their candidate is performing, among other things.
-
-The relationship between prediction markets and polls is a tricky one. On the one hand, we expect polls to influence the prediction markets, as each new poll gives the bettors new information on the chances of each candidate winning. But the prediction market can also price in information quicker than polls, so there might also exist a lagged correlation in the other direction.
-
-That said, polls and prediction markets don't always tell the same story. I've produced some plots below of the 2016 primaries and general election, as well as the 2020 race to show and average of the polls recorded by [RealClearPolitics](https://RealClearPolitics.com) moves with the prediction markets aggregated at [ElectionBettingOdds](https://ElectionBettingOdds.com).
+It's also important to note that polls and prediction markets don't always tell the same story. I've produced some plots below of the 2016 primaries and general election, as well as the 2020 race to show and average of the polls recorded by [RealClearPolitics](https://RealClearPolitics.com) moves with the prediction markets aggregated at [ElectionBettingOdds](https://ElectionBettingOdds.com).
 
 I didn't account for sample size or pollster bias in the polling average, but instead took a 15-day rolling average of all polls collected by RCP. As the data is only used for visual comparison, I assume this is not a huge deal as the trend lines for a sophisticated average and my rolling average should look about the same.
 
@@ -115,13 +115,13 @@ Now there are a whole lot of caveats to give here. For starters, this assumes th
 
 The other caveat is that calculating the conditional probability like this implies the events are *independent*, which they certainly are not. If support for a candidate in the Primary changes, it's possible that whatever event triggered that change will also change their support in a general election.
 
-Nevertheless, this could give a hint as to which candidates are more "electable" in a general election. Interestingly, the two most progressive candidates in the field - Warren and Sanders - have consistently shown high levels of electability when measured like this, which runs contrary to the centrist strategies of Harris and Biden. See [here](https://primary.guide/) for real-time updates to these conditional probabilities.
+Nevertheless, this could give a hint as to which candidates are more "electable" in a general election. Interestingly, the two most progressive candidates in the field - Warren and Sanders - have consistently shown high levels of electability when measured like this, which raises questions for the centrists like Harris and Biden. See [here](https://primary.guide/) for real-time updates to these conditional probabilities.
 
 ## Conclusion
 
-Prediction Markets are a really interesting tool that can supplement our ability to predict the future. When applied to politics, they can provide information more quickly than polls, and naturally aggregate more disparate sources of information. This can be helpful to inform campaign strategy or otherwise understand factors that influence election outcomes in smaller time windows than public opinion polls.
+Prediction Markets and the data they generate can supplement our ability to predict the future. When applied to politics, they can provide information more quickly than polls, and naturally aggregate more disparate sources of information. This can be helpful to inform campaign strategy or otherwise understand factors that influence election outcomes in smaller time windows than public opinion polls alone.
 
-Prediction markets alone do not replace polling, or polls-based models, but they do provide a promising alternative or supplement, especially when speed-to-insight is a concern.
+Prediction markets should certainly not replace polling, or polls-based models, but they do provide a promising alternative or supplement, especially when speed-to-insight is a concern.
 
 ## Appendix
 
