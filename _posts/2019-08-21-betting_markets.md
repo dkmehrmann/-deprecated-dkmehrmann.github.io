@@ -9,7 +9,9 @@ tags: election
 
 <div id="chartContainer"></div>
 
-I used [aggregate data from a popular prediction market](electionbettingodds.com) to look at how each candidate's win probability changed between the day before each debate and the day after. Keep reading to learn more!
+I used [aggregate data from a popular prediction market](https://electionbettingodds.com) to look at how each candidate's chance of winning the Democratic nomination changed between the day before and the day after each debate. Note that candidates with higher probabilities have a larger opportunity to move around in the probability space, so larger movements don't necessarily mean better or worse debate performances.
+
+Keep reading to learn more about prediction markets and their relation to elections!
 
 <hr>
 
@@ -30,7 +32,7 @@ Speaking of debate performances, [the chart above](#chartContainer) demonstrates
 
 In general, Prediction Markets and polls should be correlated. We expect polls to influence the prediction market, as each new poll gives the bettors new information on the chances of each candidate winning. But the prediction market can also price in information quicker than polls, so there might also exist a lagged correlation in that direction.
 
-That said, polls and prediction markets don't always tell the same story. I've produced some plots below of the 2016 primaries and general election, as well as the 2020 race to show and average of the polls recorded by [RealClearPolitics](RealClearPolitics.com) moves with the prediction markets aggregated at [ElectionBettingOdds](ElectionBettingOdds.com).
+That said, polls and prediction markets don't always tell the same story. I've produced some plots below of the 2016 primaries and general election, as well as the 2020 race to show and average of the polls recorded by [RealClearPolitics](https://RealClearPolitics.com) moves with the prediction markets aggregated at [ElectionBettingOdds](https://ElectionBettingOdds.com).
 
 I didn't account for sample size or pollster bias in the polling average, but instead took a 15-day rolling average of all polls collected by RCP. This would be an issue if I was doing something specific with the data, but the trends should look almost identical between a sophisticated average and my method for visual comparison.
 
@@ -44,7 +46,7 @@ The RCP polls stop a little short of Trump clinching the nomination, hence the m
 
 In this example, the polls and the betting markets pretty much agree, and this is what we expect. If polls had suggested a different reality than what the prediction market did, bettors could have taken advantage of that information and placed bets until the market lined up with reality.
 
-We expect the spread of the lines to be greater in the top plot because **the bottom plot does not show a probability of the candidate winning,** it shows a polling average. Turning polls into win probabilities is a large undertaking, and not the focus of this article.
+Remember that **the bottom plot does not show a probability of the candidate winning,** it shows a polling average; candidates can be polling 5 points apart but have a huge gap in terms of win probability. Turning polls into win probabilities is a large undertaking, and not the focus of this article.
 
 
 ### 2016 Democratic Primary
@@ -77,7 +79,7 @@ Compare this with others who gave probabilistic predictions fo the 2016 race:
 
 Note that [PredictWise](https://markets.predictwise.com/markets/) is also a prediction market aggregator run by David Rothschild, the Author of the paper linked above. The reason I used ElectionBettingOdds for this article is that it was simply the first one I found.
 
-### 2020 Election
+### 2020 Democratic Primary
 
 The basic premise of this article is that, much like polls, we can use prediction markets to help predict future events. In theory, prediction markets bake in all available information, leverage the wisdom of crows, and provide an unbiased view of the chances of, say, Elizabeth Warren winning the Democratic Nomination.
 
@@ -87,6 +89,8 @@ The basic premise of this article is that, much like polls, we can use predictio
 
 In the 2020 Democratic primary, Joe Biden has been leading in polls since RCP started collecting them. Prediction markets, on the other hand, have named several different frontrunners over the last few months. Harris once had the lead, and now it is Warren, presumably on the backs of their respective debate performances.
 
+### 2020 Presidential Election
+
 <p align="center">
   <img src="/figs/2019-08-21-betting_markets/Conditional_Win_Probs.png">
 </p>
@@ -95,7 +99,7 @@ The last plot I want to show is each candidate's *conditional* win probability .
 
 For example, if Warren is given a 50% chance of winning the primary and a 20% chance of winning the predidency, her implicit *conditional win probability* is 0.2/0.5 = 0.4. This makes sense because her chances of winning the nomination (0.5) times her chances of winning the presidency *if* she wins the nomination (0.4) give her chances overall of winning the presidency (0.2).
 
-Now there are a whole lot of caveats to name here. For starters, this assumes that the markets are efficient. Notice Beto at one time had a 65% chance of winning the presidency while the next closest person was Sanders at 55%. I have nothing against Beto, but I don't think he's got *that* much charisma. This probably indicates that the markets are a little out of sync (and therefore there is a chance to make some money via arbitrage).
+Now there are a whole lot of caveats to give here. For starters, this assumes that the markets are efficient. Notice Beto at one time had about a 65% conditional chance of winning the presidency while the next closest person was Sanders at 55%. I have nothing against Beto, but I don't think he's got *that* much charisma. This probably indicates that the markets are a little out of sync (and therefore there is a chance to make some money via arbitrage).
 
 The other caveat is that calculating the conditional probability like this implies the events are *independent*, which they certainly are not. If support for a candidate in the Primary changes, it's possible that whatever event triggered that change will also change their support in a general election.
 
@@ -103,16 +107,11 @@ Nevertheless, this could give a hint at which candidates are more "electable" in
 
 ## Conclusion
 
-Prediction Markets are really interesting tools that can supplement our ability to predict the future. When applied to politics, they can provide information more quickly than polls, and naturally aggregate more disparate sources of information.
+Prediction Markets are a really interesting tool that can supplement our ability to predict the future. When applied to politics, they can provide information more quickly than polls, and naturally aggregate more disparate sources of information. This can be helpful to inform campaign strategy or otherwise understand factors that influence election outcomes in smaller time windows than public opinion polls.
 
-## Appendix: The Code
+## Appendix
 
-Notebook to pull data and generate plots is [here](https://colab.research.google.com/drive/1ER_FOn1NRa368WRF29EI1UBiQOm2GWRy).
-
-## Appendix: Further Reading
-
-* https://electionbettingodds.com/about.html
-* https://floridapolitics.com/archives/301997-gamblers-say-these-candidates-will-get-the-biggest-post-debate-bump
+Notebook to pull data and generate plots is [here](https://colab.research.google.com/drive/1ER_FOn1NRa368WRF29EI1UBiQOm2GWRy). You can read more about how the data is generated [here](https://electionbettingodds.com/about.html).
 
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
