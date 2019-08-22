@@ -85,7 +85,7 @@ Compare this with others who gave probabilistic predictions fo the 2016 race:
 
 - Source: [Politico](https://www.politico.com/magazine/story/2016/12/the-worst-political-predictions-of-2016-214555)
 
-Note that [PredictWise](https://markets.predictwise.com/markets/) is also a prediction market aggregator run by David Rothschild, the Author of the paper linked above. The reason I used ElectionBettingOdds for this article is that it was simply the first one I found.
+Note that [PredictWise](https://markets.predictwise.com/markets/) is also a prediction market aggregator run by David Rothschild, the Author of the paper linked above. The reason I used ElectionBettingOdds for this article is that it was simply the first one I found, but it should be noted that EBO has a [pretty remarkable track record](https://electionbettingodds.com/TrackRecord.html) for prediction.
 
 ### 2020 Democratic Primary
 
