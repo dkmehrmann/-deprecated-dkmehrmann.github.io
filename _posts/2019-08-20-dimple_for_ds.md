@@ -27,7 +27,7 @@ The problem with creating interactive graphics however is that data science lang
 
 This is where Javascript can really help a data scientist to make portable, interactive graphics. Javascript runs in a web browser, which everybody everywhere has if they have access to a computer. You can usually host a web page more easily than you can host Python or R applications, but you don't even need to because you can simply package your code into an HTML file which any web browser will know how to interpret. Instead of throwing some PNGs in a PowerPoint and giving a lecture, how much more would your audience get out of an interactive webpage that they can play with themselves?
 
-## Why You Hate javascript
+## Why You Hate Javascript
 
 Nevertheless, if you look at most data scientists' resumes you don't see a whole lot of folks with experience in JS. The reason for that is relatively simple: Javascript is hard. Programming in general is hard, but luckily data scientists sort of get away with a cheap one because Python is forgiving and verbose and R is literally made for data science. No such luck with Javascript, which can be especially difficult if one does not have a basic understanding of web concepts like HTML and CSS.
 
