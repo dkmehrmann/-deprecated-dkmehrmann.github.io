@@ -24,14 +24,26 @@ I am fortunate enough to be in that group of Americans, and that is why **I am p
 
 ## The Economics of Giving
 
-I was inspired to do this by the ["real" Giving Pledge](https://givingpledge.org/About.aspx) that several billionaires have taken to give away the majority of their wealth.
+I was inspired to do this by the ["real" Giving Pledge](https://givingpledge.org/About.aspx) that several billionaires have taken to give away the majority of their wealth. At its core, my personal giving pledge is based on [effective altruism](https://en.wikipedia.org/wiki/Effective_altruism). There is a related concept called [Earning to Give](https://en.wikipedia.org/wiki/Earning_to_give) where people deliberately take high-earning jobs to be able to donate more, something I call the Robin Hood model.
 
 A giving pledge can be thought of as a voluntary tax where you get to choose where the money goes. The most common argument against high taxes for the rich is that it will disincentivize them from contributing to the economy. The logic seems sound: if you impose higher taxes, working more results in less income than it did before, and therefore higher taxes will mean our most valuable members of the economy contribute to it less.
 
 For at least the individuals that have taken the giving pledge, this does not seem to hold. Money past a certain point is more a method of keeping score, and mostly the game you're playing at that point is against yourself. Bezos doesn't want another billion so he can buy a bigger yacht, he wants another billion because that means his Amazon project is going well.
 
-Even if you don't buy that, remember that a giving pledge is voluntary, meaning that you only take it if you're not motivated by consumption dollars in the first place. Critics might argue that somebody giving away their money will give them less political influence (we know [money does indeed buy politics](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/62327F513959D0A304D4893B382B992B/S1537592714001595a.pdf/testing_theories_of_american_politics_elites_interest_groups_and_average_citizens.pdf)), and that they could do more good with political influence than transfers of wealth. My counterargument would be that nothing in the pledge is precluding you from using your giving dollars in politics, as long as your political agenda is to "do good", however you define it. If you want to donate to the libertarian candidate who's going to lower taxes on the wealthy because that's your vision of a good society, that's fine by me.
-
-## Distributing the Funds
+Even if you don't buy that, remember that a giving pledge is voluntary, meaning that you only take it if you're not motivated by consumption dollars in the first place. Critics might argue that somebody giving away their money will give them less political influence (we know [money does indeed buy politics](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/62327F513959D0A304D4893B382B992B/S1537592714001595a.pdf/testing_theories_of_american_politics_elites_interest_groups_and_average_citizens.pdf)), and that they could do more good with political influence than transfers of wealth. My counterargument would be that nothing in the pledge is precluding you from using your giving dollars in politics, as long as your political agenda is to "do good", however you define it. If you want to donate to the libertarian candidate who's going to lower taxes on the wealthy because that's your vision of a "good" society, that's fine by me.
 
 ## Expanding to Other Donors
+
+Proponents of the free market (especially those in the Libertarian camp) have long purported that private charity could replace government welfare. I'm skeptical of that notion, but I recognize how deeply capitalism is engrained in our society. Instead of swimming against the current, I'd like to alter its course.
+
+I believe there are lots of people with extra income that don't know what to do with it. Our society has made it extremely easy to consume, and extremely difficult to give. My goal is to change that.
+
+As income inequality grows, this problem will only get worse. Higher education is extremely expensive, but for a small portion of graduates the investment pays off big time. The average Computer Science graduate from University of Illinois (my alma mater) [is pulling $100k,](https://cs.illinois.edu/about-us/statistics) while the person preparing their company-sponsored breakfast is fighting for 1/3 of that.
+
+It takes hard work to graduate with a CS degree, but it also takes inborn intelligence, a good high school education, sound college advising, and a support system at home. Most Americans are lacking at least one of those by no fault of their own, and as one of the lucky ones I believe I owe it to those less fortunate to help out.
+
+But I know I'm not alone in this belief. I know there are many people who know how much luck determined their economic outcome, and maybe feel guilty about it, and want to *do something* but have no idea what or how.
+
+But there are lots of questions one should ask. How much can we really afford to give? How do we know we won't need the extra income in the future for medical bills or other tragic events? Which cause should I give to, and how do we know the money we give is actually going to help people?
+
+These are the questions I believe people need help answering, and I'm hopeful that my experience trying to give away a portion of my income will give me the tools to help others give. [Giving What We Can](https://www.givingwhatwecan.org/) is an organization with a similar origin story, and with a goal similar to mine. I hope to expand on the great work they've done by modernizing it and using concepts from the private sector.
