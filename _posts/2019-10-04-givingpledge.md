@@ -7,21 +7,22 @@ output: html_document
 tags: effectivealtruism
 ---
 
-## Intro
-
 We all know that money can't buy happiness, but we're also pretty bad at parting with it. Would it help you to know that after a certain level of income, your marginal utility of additional income flatlines? In fact, [Daniel Kahneman and Angus Deaton have put a number on it](https://www.pnas.org/content/107/38/16489): **$75,000**.
 
 Of course this number is nothing but an anchor, or a starting point to think about how much income each of us would be happy with. In fact, if you expand your definition of happiness, you might get [a number closer to $105,000](https://www.nature.com/articles/s41562-017-0277-0.epdf?referrer_access_token=JBgmiRAoYQhtBgbj0zSVX9RgN0jAjWel9jnR3ZoTv0P6pRUGAIioLhu85ORBsjF_g5Rf0fuUViMASagr_M7VEy5MRXaYGPiRKa_FSO3qh3qFZW2eGnWNkmHVW7J5KJM5kHZ_dY8AULUrukyysIQ5PxXS7cUPJ28GwywaXRvjNOW4O4S4YopfDke1c2jLpKYweA_UiNmDU37muQ3AVIlWIl62D0tBToG48TSKGKsGp9KMPce9WhaRHaEaoEzqc98rna7AGO08mwDmHgtLsn_jqXU2G-YN2_zarpgTR7kDviwgNDsYjg8hicjM6REnwB3dOc41vXxAcYXX-jBG4Uxd2Q%3D%3D&tracking_referrer=www.usatoday.com).
 
-> **25% of Americans employed full-time earn an income of $75,000 or more**
+**25% of Americans employed full-time earn an income of [$75,000 or more.](https://dqydj.com/income-percentile-calculator/)** If you use the high estimate of $105,000, that percentage drops to 14%, still a large fraction of workers. This means 14-25% of Americans have so much income that additional income doesn't increase their life satisfaction or happiness at all on average.
 
-\- Source: [https://dqydj.com/income-percentile-calculator/](https://dqydj.com/income-percentile-calculator/)
+This phenomenon is due to diminishing marginal returns: every additional dollar of income means less to you than the previous dollar, and eventually the dollars mean virtually nothing. This also means that an additional dollar to a poor person benefits them far more than an additional dollar to a rich person. William MacAskill illustrates this concept in his book *Doing Good Better*:
 
-If you use the high estimate of $105,000, that percentage drops to 14%, still a large fraction of workers. This means 14-25% of Americans have so much income that additional income doesn't increase their life satisfaction or happiness.
+> I call it the 100x Multiplier. For those of us living in rich countries, you should expect to be able to do at least one hundred times as much to benefit other people as you can to benefit yourself.
+> -- Macaskill, Doing Good Better, p.23
 
-I am fortunate enough to be in that group of Americans, and that is why **I am pledging to give any income over $75,000 for good**. I am hesitant to share details of my finances online, but my hope is that by pledging this publicly I might convince others to do this with me.
+I myself have experienced my life not getting better with more income, which is why **I am pledging to give any income over $75,000 for good**.
 
-The details of what I consider "good" are currently under construction, so I'm not ready to declare them publicly just yet. I do however plan to loosely follow the [Effective Altruism](https://www.effectivealtruism.org/articles/introduction-to-effective-altruism/) philosophy (more on this below).
+I don't want this pledge to be misinterpreted: I don't think this will affect my life very much at all. In fact, as a rational being, I expect that this will have a net *positive* effect on my life satisfaction. In that sense, this is a completely self-serving act. I am hesitant to share details of my finances with strangers online, but my hope is that by pledging this publicly I might be further committed to it or convince others to do this with me. If I convince just one other person, I've doubled my impact! Realistically however, very few people will visit my quiet corner of the internet and this pledge will be just for me.
+
+The details of what I consider "good" are currently under construction, so I'm not ready to declare donation recipients just yet. I do however plan to loosely follow the [Effective Altruism](https://www.effectivealtruism.org/articles/introduction-to-effective-altruism/) philosophy (more on this below).
 
 ## Effective Altruism
 
