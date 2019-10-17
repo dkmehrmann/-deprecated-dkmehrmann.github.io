@@ -2,7 +2,7 @@
 layout: post
 title: A Loosely Economic Argument for Giving to Charity
 author: "Andrew Mehrmann"
-date: "October 3, 2019"
+date: "October 31, 2099"
 output: html_document
 tags: effectivealtruism
 ---
