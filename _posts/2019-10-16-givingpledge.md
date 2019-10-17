@@ -9,7 +9,7 @@ tags: effectivealtruism
 
 If you're reading this, chances are you're richer than 9 out of 10 people on this planet. Have you ever thought about how your life might be different if you were born in the developing world? As a straight white American male, this thought crosses my mind often (although probably not as often as it should). I often think about how *fortunate* I am to be so comparatively rich, mostly due to factors outside my control like where I was born and who my parents are. Often, this thought is accompanied by a pang of guilt.
 
-And maybe there's good reason to feel guilty. Economists have studied the relationship between money and happiness, and found no relationship above annual incomes of between [ [$75,000]((https://www.pnas.org/content/107/38/16489) and [$105,000](https://www.nature.com/articles/s41562-017-0277-0.epdf?referrer_access_token=JBgmiRAoYQhtBgbj0zSVX9RgN0jAjWel9jnR3ZoTv0P6pRUGAIioLhu85ORBsjF_g5Rf0fuUViMASagr_M7VEy5MRXaYGPiRKa_FSO3qh3qFZW2eGnWNkmHVW7J5KJM5kHZ_dY8AULUrukyysIQ5PxXS7cUPJ28GwywaXRvjNOW4O4S4YopfDke1c2jLpKYweA_UiNmDU37muQ3AVIlWIl62D0tBToG48TSKGKsGp9KMPce9WhaRHaEaoEzqc98rna7AGO08mwDmHgtLsn_jqXU2G-YN2_zarpgTR7kDviwgNDsYjg8hicjM6REnwB3dOc41vXxAcYXX-jBG4Uxd2Q%3D%3D&tracking_referrer=www.usatoday.com) depending on which study you prefer. This means 14-25% of Americans have so much income that additional income doesn't increase their life satisfaction or happiness at all on average (for white males the percentage is even higher).
+And maybe there's good reason to feel guilty. Economists have studied the relationship between money and happiness, and found no relationship above annual incomes of between [$75,000](https://www.pnas.org/content/107/38/16489) and [$105,000](https://www.nature.com/articles/s41562-017-0277-0.epdf?referrer_access_token=JBgmiRAoYQhtBgbj0zSVX9RgN0jAjWel9jnR3ZoTv0P6pRUGAIioLhu85ORBsjF_g5Rf0fuUViMASagr_M7VEy5MRXaYGPiRKa_FSO3qh3qFZW2eGnWNkmHVW7J5KJM5kHZ_dY8AULUrukyysIQ5PxXS7cUPJ28GwywaXRvjNOW4O4S4YopfDke1c2jLpKYweA_UiNmDU37muQ3AVIlWIl62D0tBToG48TSKGKsGp9KMPce9WhaRHaEaoEzqc98rna7AGO08mwDmHgtLsn_jqXU2G-YN2_zarpgTR7kDviwgNDsYjg8hicjM6REnwB3dOc41vXxAcYXX-jBG4Uxd2Q%3D%3D&tracking_referrer=www.usatoday.com) depending on which study you prefer. This means 14-25% of Americans have so much income that additional income doesn't increase their life satisfaction or happiness at all on average (for white males the percentage is even higher).
 
 William MacAskill illustrates this concept in his book *Doing Good Better*:
 
@@ -57,7 +57,7 @@ Thus, think of Effective Altruism as one more thing to draw on to decide how to 
 
 [effectivealtruism.org](https://www.effectivealtruism.org/) is a comprehensive tool for learning and practicing Effective Altruism. There is a wealth of information and resources there, so I encourage you to pay them a visit.
 
-[Giving What We Can](https://www.givingwhatwecan.org/) and [The Life You Can Save](https://www.thelifeyoucansave.org/) are communities of people that pledge to give a portion of their income effectively. I am not using either at the moment, but I may in the future.
+[Giving What We Can](https://www.givingwhatwecan.org/) and [The Life You Can Save](https://www.thelifeyoucansave.org/) are communities of people that pledge to give a portion of their income effectively.
 
 [80,000 Hours](https://80000hours.org/) provides advice and resources for choosing a high-impact career.
 
