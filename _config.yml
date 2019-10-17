@@ -17,5 +17,7 @@ github_username:  dkmehrmann
 linkedin: https://www.linkedin.com/in/dkmehrmann
 resume: https://docs.google.com/document/d/1N9QW2FLFqRjOTDhM37lcBxpjgb4jb3ZpfzHtd97-CmU/edit?usp=sharing
 
+future: false
+
 # Build settings
 markdown: kramdown
