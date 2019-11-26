@@ -1,8 +1,8 @@
 ---
 layout: category
-title: Technical and How-To
+title: Programming
 navigable: true
 mytag: 'technical'
 ---
 
-<i>Programming or Data Science topics geared towards practitioners.</i>
+<i>(Light) programming topics geared towards practitioners.</i>

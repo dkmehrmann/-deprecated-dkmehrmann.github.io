@@ -103,12 +103,12 @@ body {
   background-color: rgb(56,180,74);
 }
 
-/* In-page links go 60px higher to account for the header */
-:target::before {
+/* In-page h2 links go 60px higher to account for the header */
+h2:target::before {
   content: "";
   display: block;
   height: 60px; /* fixed header height*/
-  margin: -60px 0 0; /* negative fixed header height */
+  margin-top: -60px; /* negative fixed header height */
 }
 
 hr {
