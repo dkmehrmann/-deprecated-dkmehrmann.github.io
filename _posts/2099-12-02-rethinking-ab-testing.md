@@ -7,7 +7,9 @@ output: html_document
 tags: programeval
 ---
 
-This post is Part One of a three-part series on Randomized Controlled Trials (RCTs) with an emphasis on A/B testing. Other articles in this series are []]() and []().
+---
+
+This post is Part One of a three-part series on Randomized Controlled Trials (RCTs) with an emphasis on A/B testing. Other articles in this series are []() and []().
 
 ---
 
