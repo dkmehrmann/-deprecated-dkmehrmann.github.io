@@ -2,7 +2,7 @@
 layout: post
 title: A/B Tests that Make Sense
 author: "Andrew Mehrmann"
-date: "December 03, 2019"
+date: "December 04, 2019"
 output: html_document
 tags: programeval
 ---
@@ -11,7 +11,7 @@ tags: programeval
 
 This post is Part Two of a three-part series on Randomized Controlled Trials (RCTs) with an emphasis on A/B testing. Other articles in this series are []() and []().
 
-This is a less technical version of the argument outlined in [this whitepaper by Chris Stucchio](https://cdn2.hubspot.net/hubfs/310840/VWO_SmartStats_technical_whitepaper.pdf).
+*This is a less technical version of the argument outlined in [this whitepaper by Chris Stucchio](https://cdn2.hubspot.net/hubfs/310840/VWO_SmartStats_technical_whitepaper.pdf). I use slightly different notation, but the ideas are mostly the same.*
 
 ---
 
@@ -45,18 +45,14 @@ I bet your P-values can't do that!
 
 ## Cultural Benefits
 
-I haven't discussed in detail the process of constructing $P(\Delta)$, but one important step is choosing a "prior distribution" on $\Delta$. This is basically your belief - before the experiment runs - of what values $\Delta$ might take. Subject matter experts may be consulted during this phase, and their opinion incorporated in the form of a prior. Having a good idea of what values $\Delta$ might take before the test can lead to shorter test times, but it also allows stakeholders to feel more comfortable about the testing procedure. Like it or not, data from an experiment is going to be weighed against stakeholders preconceived notions, and the Bayesian framework gives a convenient way to express that relationship mathematically.
+I haven't discussed in detail the process of constructing $P(\Delta)$, but one important step is choosing a "prior distribution" on $\Delta$. This is basically your belief - before the experiment runs - of what values $\Delta$ might take. Subject matter experts may be consulted during this phase, and their opinion incorporated in the form of this prior distribution. Having a good idea of what $\Delta$ might be before the test can lead to shorter test times, but it also allows stakeholders to feel more comfortable about the testing procedure. Like it or not, data from an experiment is going to be weighed against stakeholders' preconceived notions, and the Bayesian framework gives a convenient way to express that relationship mathematically.
 
-Another major benefit of these mathematical changes is that they express test results in terms that stakeholders are familiar with. I hypothesize that this will lead to better adoption of testing practices, but I haven't verified with my own experience.
+Another major benefit of these mathematical changes is that they express test results in terms that human beings are familiar with. For example, you can make statements of the probability that the new product will make money, or the expected return of the new project. I hypothesize that this will lead to better adoption of testing practices, but I haven't verified with my own experience.
 
-On the other hand, your mileage my vary. The choice of prior might be just as confusing to stakeholders as explaining a p-value or choosing a minimum detectable effect. If this should be the case, practitioners should go back to the drawing board and establish a testing framework that works for everyone. Remember to optimize towards better decision making, not a particular method for accomplishing that end. These mathematical changes are only beneficial insofar as they lead to real change within the organization.
+On the other hand, your mileage may vary. The choice of prior might be just as confusing to stakeholders as explaining a p-value or choosing a minimum detectable effect. If this should be the case, practitioners should go back to the drawing board and establish a testing framework that works for everyone. Remember to optimize towards better decision making, not a particular method for accomplishing that end. These mathematical changes are only beneficial insofar as they lead to real change within the organization.
 
 ## Conclusions
 
 Mathematically, a Bayesian approach to A/B testing allows us to make inferences on the probability that A is better than B or vice versa. It also allows us to construct a distribution of the possible values for the difference between A and B. Furthermore, by mapping this probability distribution to a profit/revenue space, this allows us to make inferences in terms of dollars, e.g. “what is the probability that A will generate more than $1000 additional revenue?” or “what is the probability that B is profitable?”
 
 Culturally, by including context in statistical analyses, human experts become first-class citizens and empirical analyses become more accessible. A priori assumptions are framed in terms of "what do you expect to see" rather than "what is the smallest effect that you wish to be able to detect," while results are expressed in language that stakeholders expect and desire to see. Furthermore, keeping the bottom line (e.g. profits or lives saved) as the focus of the test will guide decision makers to optimize for those things directly rather than maximizing short-term incentives.
-
-
-
-## Footnotes

@@ -2,7 +2,7 @@
 layout: post
 title: Rethinking A/B Testing
 author: "Andrew Mehrmann"
-date: "December 02, 2019"
+date: "December 04, 2019"
 output: html_document
 tags: programeval
 ---
