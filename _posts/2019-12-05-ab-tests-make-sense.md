@@ -4,12 +4,10 @@ title: A/B Tests that Make Sense
 author: "Andrew Mehrmann"
 date: "January 10, 2020"
 output: html_document
-tags: programeval
+tags: causal
 ---
 
----
-
-This post is Part Two of a three-part series on Randomized Controlled Trials (RCTs) with an emphasis on A/B testing. Other articles in this series are []() and []().
+This post is Part Two of a three-part series on Randomized Controlled Trials (RCTs) with an emphasis on A/B testing. Other articles in this series are [Rethinking A/B Testing](/2020/01/09/rethinking-ab-testing.html) and [An Economic Framework for A/B Testing](/2020/01/11/economic-framework-for-ab-testing.html).
 
 *This is a less technical version of the argument outlined in [this whitepaper by Chris Stucchio](https://cdn2.hubspot.net/hubfs/310840/VWO_SmartStats_technical_whitepaper.pdf). I use slightly different notation, but the ideas are mostly the same.*
 
@@ -64,6 +62,12 @@ Mathematically, a Bayesian approach to A/B testing allows us to make inferences 
 Culturally, by including context in statistical analyses, human experts become first-class citizens and empirical analyses become more accessible. A priori assumptions are framed in terms of "what do you expect to see" rather than "what is the smallest effect that you wish to be able to detect," while results are expressed in language that stakeholders expect and desire to see. Furthermore, keeping the bottom line (e.g. profits or lives saved) as the focus of the test will guide decision makers to optimize for those things directly rather than maximizing short-term incentives.
 
 On the other hand, your mileage may vary. The choice of prior might be just as confusing to stakeholders as explaining a p-value or choosing a minimum detectable effect. If this should be the case, practitioners should go back to the drawing board and establish a testing framework that works for everyone. Remember to optimize towards better decision making, not a particular method for accomplishing that end. These mathematical changes are only beneficial insofar as they lead to real change within the organization.
+
+<ul class="pager">
+  <li class="previous"><a href="/2020/01/09/rethinking-ab-testing.html">Prev: Rethinking A/B Testing</a></li>
+  <li class="next"><a href="/2020/01/11/economic-framework-for-ab-testing.html">Next: An Economic Framework for A/B Testing</a></li>
+</ul>
+
 
 ## Footnotes
 

@@ -4,12 +4,10 @@ title: Rethinking A/B Testing
 author: "Andrew Mehrmann"
 date: "January 09, 2020"
 output: html_document
-tags: programeval
+tags: causal
 ---
 
----
-
-This post is Part One of a three-part series on Randomized Controlled Trials (RCTs) with an emphasis on A/B testing. Other articles in this series are []() and []().
+This post is Part One of a three-part series on Randomized Controlled Trials (RCTs) with an emphasis on A/B testing. Other articles in this series are [A/B Tests that Make Sense](/2020/01/10/ab-tests-make-sense.html) and [An Economic Framework for A/B Testing](/2020/01/11/economic-framework-for-ab-testing.html).
 
 ---
 
@@ -46,6 +44,10 @@ There exist plenty of arguments in favor of using RCTs to measure and improve ou
 
 On the other hand, I believe it is possible to work toward solving them. The other articles in this series will address each in turn, and I'm hopeful that I don't come across as skeptical of the RCT in general; I think RCTs are one of the most powerful tools we have to understand a complicated universe. It's precisely *because* I believe in them that I hope to persuade others of ways to improve them, and to hold a realistic view of their costs and benefits.
 
+<ul class="pager">
+  <li class="previous disabled"><a href="#">Prev: </a></li>
+  <li class="next"><a href="/2020/01/10/ab-tests-make-sense.html">Next: A/B Tests that Make Sense</a></li>
+</ul>
 
 ## Apx: Advice for Practitioners
 

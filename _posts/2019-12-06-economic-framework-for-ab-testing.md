@@ -4,14 +4,10 @@ title: An Economic Framework for A/B Testing
 author: "Andrew Mehrmann"
 date: "January 11, 2020"
 output: html_document
-tags: programeval
+tags: causal
 ---
 
----
-
-This post is Part Three of a three-part series on Randomized Controlled Trials (RCTs) with an emphasis on A/B testing. Other articles in this series are []() and []().
-
-Additionally, this post is a work in progress, and represents the boundary of my thinking about Bayesian A/B testing. The mathematical notation is used to help convey my point, but the equations below should not be confused with statements of truth. Please consider any thoughts contained herein as "experimental," pardon my pun, and please send me any feedback or corrections.
+This post is Part Three of a three-part series on Randomized Controlled Trials (RCTs) with an emphasis on A/B testing. Other articles in this series are [Rethinking A/B Testing](/2020/01/09/rethinking-ab-testing.html) and [A/B Tests that Make Sense](/2020/01/10/ab-tests-make-sense.html).
 
 ---
 
@@ -133,11 +129,16 @@ Remember that $P(Q \| D)$ will never practically exist on the left size of 0, be
 Translating $t$ to variance requires loads more assumptions, so I think the analytic buck stops here. That this analysis came down to a struggle between sample size and variance should be nothing new, but perhaps this revealed a new path to get there.
 
 
-## Conclusion
+## Conclusions
 
 In sum, there is an opportunity cost to delaying good ideas from reaching 100% implementation, as well as rejecting good ideas that fail to meet significance criteria. Significance criteria should be chosen to maximize a value equation like the one above considering the appropriate costs and benefits.
 
 In this post I outlined a framework for the costs and benefits of A/B testing. Future work should include working out some examples to see how typical significance thresholds compare to one that maximizes the value equation above under different distributional assumptions.
+
+<ul class="pager">
+  <li class="previous"><a href="/2020/01/10/ab-tests-make-sense.html">Prev: A/B Tests that Make Sense</a></li>
+  <li class="next disabled"><a href="#">Next: </a></li>
+</ul>
 
 ## Footnotes
 
