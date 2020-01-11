@@ -131,9 +131,11 @@ Translating $t$ to variance requires loads more assumptions, so I think the anal
 
 ## Conclusions
 
-In sum, there is an opportunity cost to delaying good ideas from reaching 100% implementation, as well as rejecting good ideas that fail to meet significance criteria. Significance criteria should be chosen to maximize a value equation like the one above considering the appropriate costs and benefits.
+The primary benefit of A/B testing is stopping bad ideas from doing harm in business, policy, philanthropy, or other important arenas. On the other hand, there is an opportunity cost to delaying good ideas from reaching 100% implementation, as well as rejecting good ideas that fail to meet significance criteria.
 
-In this post I outlined a framework for the costs and benefits of A/B testing. Future work should include working out some examples to see how typical significance thresholds compare to one that maximizes the value equation above under different distributional assumptions.
+I believe significance criteria should be chosen to maximize a value equation like the one above considering the appropriate costs and benefits, rather than based on archaic rules of thumb (looking at you, p-values). This allows for optimizing for the end goal directly, rather than for some intermediate metric that might not always translate to the bottom line.
+
+In this post I outlined one framework for the costs and benefits of A/B testing. Future work should include working out some examples to see how typical significance thresholds compare to one that maximizes the value equation above under different distributional assumptions, as well as developing alternative cost/benefit frameworks. If the end goal of A/B testing is to maximize impact, it makes sense to tailor the tools to the ends.
 
 <ul class="pager">
   <li class="previous"><a href="/2020/01/10/ab-tests-make-sense.html">Prev: A/B Tests that Make Sense</a></li>

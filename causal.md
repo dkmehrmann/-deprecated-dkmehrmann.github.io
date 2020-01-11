@@ -5,4 +5,4 @@ navigable: true
 mytag: 'causal'
 ---
 
-<i>Econometrics, RCTs, Program/Impact Evaluation, etc</i>
+<i>Econometrics, RCTs, Program/Impact Evaluation, etc.</i>
