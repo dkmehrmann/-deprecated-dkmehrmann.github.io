@@ -2,7 +2,7 @@
 layout: post
 title: A/B Tests that Make Sense
 author: "Andrew Mehrmann"
-date: "December 04, 2019"
+date: "January 10, 2020"
 output: html_document
 tags: programeval
 ---
