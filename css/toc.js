@@ -6,7 +6,7 @@ $("#content").find("h2").each(function() {
     } else if (h.attr('id')) {
     	toc.append("<li><a href='#" + h.attr('id') + "'>" + h.text() + "</a></li>");
     }
-  
+
 });
 
 
@@ -15,3 +15,7 @@ $('#nav').affix({
     offset: $('#nav').position()
 });
 */
+$(window).on("resize", function () {
+  var $affixElement = $('.affix');
+  $affixElement.width($affixElement.parent().width());
+}).resize()
