@@ -52,6 +52,8 @@ Edlin, Gelman, and Kaplan translated these probabilities to expected returns on 
 
 This demonstrates that - social or ontological arguments notwithstanding - the expected value of voting in the US election is almost always significant enough to justify the costs, at least through an altruistic lens.
 
+Through a completely self-interested utility framework, the argument gets a bit tougher. That $1000, instead of being multiplied by all the people in the US, is only applied to you. This makes it puzzling to some why anybody votes in the first place, if the expected self-interested utility is so low. Edlin, Gelman, and Kaplan [argued in 2007](https://www.nber.org/papers/w13562.pdf) in favor of myriad other reasons, including social pressure, that help explain through a utility framework why people vote. I find these arguments quite convincing, and they also explain why people turn out to elections with much smaller stakes than the US Presidential election.
+
 ## Translating to Donations
 
 Voters also have the ability to influence other voters through volunteering and campaign donations. I'll focus on campaign donations, but the resultant framework can easily be translated to refer to volunteer hours.
