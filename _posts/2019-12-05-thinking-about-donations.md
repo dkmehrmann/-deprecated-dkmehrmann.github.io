@@ -126,11 +126,11 @@ Intuitively, campaign spending has diminishing marginal returns, meaning that $\
 
 > campaign finance restrictions that limit candidate spending disproportionately harm challengers, increasing the incumbency advantage and decreasing electoral competition.
 
-/- [Bonneau and Cann](https://www.pitt.edu/~cwb7/assets/papers/JOP%2011%20article.pdf)
+\- [Bonneau and Cann](https://www.pitt.edu/~cwb7/assets/papers/JOP%2011%20article.pdf)
 
 >  We find that stricter limits increase political competition by creating a larger pool of candidates that is on average less wealthy. Moreover, we find that stricter spending limits reduce the incumbency advantage.
 
-/- [Avis, Ferraz, Finan, and Varjao](https://www.nber.org/papers/w23508.pdf)
+\- [Avis, Ferraz, Finan, and Varjao](https://www.nber.org/papers/w23508.pdf)
 
 All this is to say pinning down an actual dollar amount for the expected value of a campaign donation is really, really hard unless you have better data, methods, or assumptions than I have access to (or am willing to track down). That's not to say you should give up and go home, rather that these are the types of questions we should be asking if we're to make good decisions as actors in our respective democracies.
 
@@ -146,7 +146,7 @@ This is certainly not to say that donations and voting should cease until furthe
 
 [^1]: See [Edlin, Gelman, and Kaplan](https://www.nber.org/papers/w13562.pdf) who refer to Blais (2000)
 
-[^2]: For example, contemporary presidential campaigns usually raise about a Billion dollars. They also usually get about 60-70 million votes, meaning that about \\$15 is spent per vote for that candidate. But this assumption of linearity breaks down if you think about what happens if a candidate spends \\$0, or \\$2 billion; would they really get 0 or all the votes? Certainly not, because campaign spending (probably) exhibits diminishing marginal returns: the last voter you buy is far more expensive than the first.
+[^2]: For example, contemporary presidential campaigns usually raise about a billion dollars. They also usually get about 60-70 million votes, meaning that about \\$15 is spent per vote for that candidate. But this assumption of linearity breaks down if you think about what happens if a candidate spends \\$0, or \\$2 billion; would they really get 0 or all the votes? Certainly not, because campaign spending (probably) exhibits diminishing marginal returns: the last voter you buy is far more expensive than the first.
 
 [^3]: I think of this as a variant of a [Fermi Problem](https://en.wikipedia.org/wiki/Fermi_problem)
 
