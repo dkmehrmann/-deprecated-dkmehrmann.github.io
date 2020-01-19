@@ -108,7 +108,7 @@ Calculating the expected value of a campaign donation can also help us think abo
 
 For example, if you take the premise from the example study [linked above](#empirical-examples-from-us-election) that your Presidential candidate is worth \\$1000 to each American, you should consider that the cost to either sway one voter from the other candidate to your candidate (or turn out two new voters for your candidate) is likely far less than the \\$100,000 of benefit that would allegedly result by directing your donation to a high-impact state like New Mexico.
 
-Of course, for national elections we could assume that Campaign Managers perform similar calculations such that your donation will be directed wherever it will be most likely to increase the chances of your candidate winning. If we consider the results of the study again, and assume that $\Gamma(D)$ doesn't vary too much from state to state (except through the level of general spending in that state), we'd expect to see the most campaign spending in states like New Mexico, Virginia, New Hampshire, and Colorado in 2008.
+Of course, for national elections we could assume that Campaign Managers perform similar calculations such that your donation will be directed wherever it will be most likely to increase the chances of your candidate winning. If we consider the results of the study again, and assume that $\Gamma(c)$ doesn't vary too much from state to state (except through the level of general spending in that state), we'd expect to see the most campaign spending in states like New Mexico, Virginia, New Hampshire, and Colorado in 2008.
 
 Four years later, that's exactly what NPR [observed for 2012](https://www.npr.org/sections/itsallpolitics/2012/11/01/163632378/a-campaign-map-morphed-by-money) (I couldn't find good data for 2008):
 
@@ -120,9 +120,9 @@ But the same might not be said for more volatile state or local elections. The p
 
 ## How Many Votes can a Dollar Buy?
 
-Nevertheless, frameworks like these can start us asking the right questions, and perhaps even get us in the right ballpark.[^3] For example, sites like [FiveThirtyEight](https://fivethirtyeight.com/) and [ElectionBettingOdds](https://electionbettingodds.com/) can help us estimate $P(x)$ by different means, and we can get reasonable guesses about $N$ by looking at historical data. But what about $\Gamma(D)$? It turns out this is an especially difficult thing to estimate.
+Nevertheless, frameworks like these can start us asking the right questions, and perhaps even get us in the right ballpark.[^3] For example, sites like [FiveThirtyEight](https://fivethirtyeight.com/) and [ElectionBettingOdds](https://electionbettingodds.com/) can help us estimate $P(x)$ by different means, and we can get reasonable guesses about $N$ by looking at historical data. But what about $\Gamma(c)$? It turns out this is an especially difficult thing to estimate.
 
-Intuitively, campaign spending has diminishing marginal returns, meaning that $\Gamma(D)$ also depends on existing spending and the size of the potential donor base. It also probably matters whether the candidate is an incumbent or a challenger, however the first two studies I found on the subject of diminishing marginal returns gave opposite conclusions on the question on incumbency:
+Intuitively, campaign spending has diminishing marginal returns, meaning that $\Gamma(c)$ also depends on existing spending and the size of the potential donor base. It also probably matters whether the candidate is an incumbent or a challenger, however the first two studies I found on the subject of diminishing marginal returns gave opposite conclusions on the question on incumbency:
 
 > campaign finance restrictions that limit candidate spending disproportionately harm challengers, increasing the incumbency advantage and decreasing electoral competition.
 
@@ -146,7 +146,7 @@ This is certainly not to say that donations and voting should cease until furthe
 
 [^1]: See [Edlin, Gelman, and Kaplan](https://www.nber.org/papers/w13562.pdf) who refer to Blais (2000)
 
-[^2]: For example, contemporary presidential campaigns usually raise about a Billion dollars. They also usually get about 60-70 million votes, meaning that about $15 is spent per vote for that candidate. But this assumption of linearity breaks down if you think about what happens if a candidate spends $0, or $2 billion; would they really get 0 or all the votes? Certainly not, because campaign spending (probably) exhibits diminishing marginal returns: the last voter you buy is far more expensive than the first.
+[^2]: For example, contemporary presidential campaigns usually raise about a Billion dollars. They also usually get about 60-70 million votes, meaning that about \\$15 is spent per vote for that candidate. But this assumption of linearity breaks down if you think about what happens if a candidate spends \\$0, or \\$2 billion; would they really get 0 or all the votes? Certainly not, because campaign spending (probably) exhibits diminishing marginal returns: the last voter you buy is far more expensive than the first.
 
 [^3]: I think of this as a variant of a [Fermi Problem](https://en.wikipedia.org/wiki/Fermi_problem)
 
