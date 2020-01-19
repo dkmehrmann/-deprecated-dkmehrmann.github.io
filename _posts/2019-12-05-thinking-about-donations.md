@@ -31,7 +31,7 @@ $$P(\text{flip}) = P^{(1)}\left(\frac{1}{2}\right)$$
 
 where $P^{(1)}(x)$ is the discrete prior probability distribution on the vote share for that candidate without your vote. All this means is that the probability your vote "matters" is the probability that the election would have been exactly tied if not for your vote.
 
-Note that under a uniform prior, where we know absolutely nothing about the expected share of votes for either candidate, the chances that a single vote flips an election is $\frac{1}{N}$ where $N$ is the total number of votes in the election. This is a typical but naive view of how much a vote matters, e.g. "my vote is just one of millions."
+Note that under a uniform prior, where we know absolutely nothing about the expected share of votes for either candidate, the chances that a single vote flips an election is $\frac{1}{N}$ where $N$ is the total number of votes in the election. This is a typical but naive view of how much a vote matters. It's naive because we often have a pretty good idea how many votes a candidate is expected to get. Even if 2016 seems like evidence *against* our ability to predict elections, we still had a much better notion of what percentage of the vote each candidate was expected to get than "somewhere between 0 and 100%."
 
 
 ## Empirical Examples from US Elections
