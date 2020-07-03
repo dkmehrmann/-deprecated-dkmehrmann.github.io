@@ -4,7 +4,7 @@ title: An Economic Framework for A/B Testing
 author: "Andrew Mehrmann"
 date: "January 11, 2020"
 output: html_document
-tags: causal
+tags: causal econ
 ---
 
 This post is Part Three of a three-part series on Randomized Controlled Trials (RCTs) with an emphasis on A/B testing. Other articles in this series are [Rethinking A/B Testing](/2020/01/09/rethinking-ab-testing.html) and [A/B Tests that Make Sense](/2020/01/10/ab-tests-make-sense.html).
