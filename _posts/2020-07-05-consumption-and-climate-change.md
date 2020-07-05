@@ -87,6 +87,6 @@ Reducing consumption alone is useful, but the question remains what to do with t
 
 ## Appendix: Code
 
-Code to make the plot above is given below.
+Code to make the plot above is given below. Data is from [here](http://www.ggdc.net/MADDISON/oriindex.htm) and [there](https://www.co2.earth/historical-co2-datasets).
 
 <script src="https://gist.github.com/dkmehrmann/f1e12d46c37763c6a0e19c1e510fec36.js"></script>
