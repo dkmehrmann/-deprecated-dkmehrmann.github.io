@@ -61,7 +61,7 @@ At the macro level, these decisions and the policies that influence them are ref
 
 Given this model of our individual and collective carbon footprint, what should we do to help mitigate climate change as individuals? I argue that for members of the global rich, reducing consumption is often overlooked as a tool to fight climate change. I also believe there is a moral imperative to do so if you also believe that climate change is bad and that you have a part in causing it.
 
-There is little doubt that standards of living for the global poor increase as they consume more. When their basic needs are not being met, and the value of additional consumption to them may mean the difference between life and death. The utilitarian calculus would suggest that consumption by the global poor has such large positive effects that it may be outweighed by the negative externalities to the climate.
+There is little doubt that standards of living for the global poor increase as they consume more. When their basic needs are not being met, the value of additional consumption to them may mean the difference between life and death. The utilitarian calculus would suggest that consumption by the global poor has such large positive effects that it may be outweighed by the negative externalities to the climate.
 
 For the global rich - including you, almost certainly - lots of consumption is harder to justify. To bring back our mental model, each dollar of consumption brings a negative externality to the world equivalent to $E$ kilograms of CO2. That might be small or large to you, but I don't think most people think of the dollars they spend this way. To me, that's a problem, because many of these same people also believe that doing the right thing means reducing harm to others. These two things - reluctance to reduce consumption and desire to mitigate climate change - seem logically incompatible.
 
@@ -75,7 +75,7 @@ In fact, we can put this more generally by rewriting our mental model as
 
 $$CF = E_{cons} \cdot C - E_{off} \cdot F$$
 
-where $E_{cons}$ is the carbon efficiency of your consumption and $E_{off}$ is the carbon efficiency of your charitable dollars. The opportunity cost outweighs the direct cost when $E_{off} > E_{cons}$. We showed that Cool Earth has an $E_{off}$ of something like 1000 Kg/dollar, and the average $E_{cons}$ in the economy is something like 2.5 Kg/dollar. Even seemingly carbon-intense activities like burning a gallon of gasoline is something like 6 Kg/dollar. Suffice to say that **donating to effective charities can have a huge impact above and beyond reducing consumption or making consumption more carbon efficient.**
+where $E_{cons}$ is the carbon efficiency of your consumption and $E_{off}$ is the carbon efficiency of your charitable dollars. The opportunity cost outweighs the direct cost when $E_{off} > E_{cons}$. We showed that Cool Earth has an $E_{off}$ of something like 1000 Kg/dollar, and the average $E_{cons}$ in the economy is something like 0.35 Kg/dollar. Even seemingly carbon-intense activities like burning a gallon of gasoline is something like 6 Kg/dollar. Suffice to say that **donating to effective charities can have a huge impact above and beyond reducing consumption or making consumption more carbon efficient.**
 
 ## Ethical Consumption
 
